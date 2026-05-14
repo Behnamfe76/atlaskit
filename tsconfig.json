@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "composite": false,
+    "noEmit": true
+  },
+  "include": [
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+    "examples/**/*.ts",
+    "examples/**/*.tsx",
+    "vitest.workspace.ts",
+    "tsup.config.ts",
+    "eslint.config.js"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "playground",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "test": "vitest run",
+    "lint": "eslint src tests"
+  },
+  "dependencies": {
+    "@atlaskit/core": "workspace:*"
+  }
+}

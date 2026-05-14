@@ -1,0 +1,22 @@
+{
+  "name": "@atlaskit/cli",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "atlaskit": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --banner.js '#!/usr/bin/env node'",
+    "test": "vitest run",
+    "lint": "eslint src tests"
+  },
+  "dependencies": {
+    "@atlaskit/core": "workspace:*"
+  }
+}

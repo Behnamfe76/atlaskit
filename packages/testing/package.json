@@ -1,0 +1,19 @@
+{
+  "name": "@atlaskit/testing",
+  "version": "0.0.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts",
+    "test": "vitest run",
+    "lint": "eslint src tests"
+  },
+  "dependencies": {
+    "@atlaskit/core": "workspace:*"
+  }
+}
