@@ -98,6 +98,21 @@
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
 
+### Constitution Alignment *(mandatory)*
+
+- **Core Boundary**: [State whether the work changes `@atlaskit/core`, adapter
+  packages, or both. Confirm that `@atlaskit/core` will not render UI or
+  include framework-specific code.]
+- **Public API Impact**: [List public contracts, static configuration APIs, and
+  TypeScript types added or changed.]
+- **Domain Coverage**: [Identify affected core capabilities such as validation,
+  localization, transport, authorization, hooks, events, state, caching,
+  pagination normalization, plugins, and registries.]
+- **Normalization/Plugin Impact**: [Describe whether response normalization,
+  registry behavior, or plugin registration contracts change.]
+- **Verification Scope**: [List the automated tests required for public APIs and
+  affected subsystems.]
+
 ### Key Entities *(include if feature involves data)*
 
 - **[Entity 1]**: [What it represents, key attributes without implementation]

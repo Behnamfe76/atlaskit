@@ -40,7 +40,20 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- `@atlaskit/core` boundary: confirm no framework-specific rendering code or UI
+  responsibilities are introduced into core.
+- Public API typing: list every exported contract that changes and how strong
+  TypeScript typing and API documentation will be preserved.
+- Domain ownership: identify which core concerns are affected
+  (`Resource`/`Field`/`Action`/`Lens`/`Filter`/`Metric`, validation,
+  localization, transport, authorization, hooks, events, state, caching,
+  pagination normalization, plugins, registries) and justify any untouched
+  areas that are adjacent to the change.
+- Extensibility and normalization: specify required registry changes, plugin
+  impacts, and how REST/GraphQL payloads will be normalized into internal
+  shapes.
+- Verification: enumerate the automated tests required for changed public APIs
+  and changed subsystems. Plans that omit test work fail this gate.
 
 ## Project Structure
 

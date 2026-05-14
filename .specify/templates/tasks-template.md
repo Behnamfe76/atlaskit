@@ -9,7 +9,11 @@ description: "Task list template for feature implementation"
 
 **Prerequisites**: plan.md (required), spec.md (required for user stories), research.md, data-model.md, contracts/
 
-**Tests**: The examples below include test tasks. Tests are OPTIONAL - only include them if explicitly requested in the feature specification.
+**Tests**: Tests are REQUIRED for every changed public API and every affected
+engine subsystem under the project constitution. Generated task lists MUST
+include the test work needed for registries, field behavior, validation,
+transport normalization, localization, authorization, lifecycle hooks, plugin
+contracts, and adapter boundaries when those areas change.
 
 **Organization**: Tasks are grouped by user story to enable independent implementation and testing of each story.
 
@@ -179,7 +183,8 @@ Examples of foundational tasks (adjust based on your project):
 
 ### Within Each User Story
 
-- Tests (if included) MUST be written and FAIL before implementation
+- Tests for changed public contracts and affected subsystems MUST be written and
+  FAIL before implementation
 - Models before services
 - Services before endpoints
 - Core implementation before integration
@@ -246,7 +251,7 @@ With multiple developers:
 - [P] tasks = different files, no dependencies
 - [Story] label maps task to specific user story for traceability
 - Each user story should be independently completable and testable
-- Verify tests fail before implementing
+- Verify required tests fail before implementing
 - Commit after each task or logical group
 - Stop at any checkpoint to validate story independently
 - Avoid: vague tasks, same file conflicts, cross-story dependencies that break independence
