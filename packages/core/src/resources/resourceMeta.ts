@@ -24,7 +24,9 @@ function defaultEndpoints(uriKey: string): ResourceEndpoints {
   };
 }
 
-export function extractResourceMeta(resourceClass: ResourceClass): ResourceMetadata {
+export function extractResourceMeta(
+  resourceClass: ResourceClass
+): ResourceMetadata {
   const id = resourceClass.id;
   const uriKey = resourceClass.uriKey;
 

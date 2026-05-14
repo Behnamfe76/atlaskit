@@ -32,7 +32,7 @@ frontend resource engine for creating Nova-like admin systems powered by APIs."
   First-release query and cache support includes reads, writes, invalidation,
   and optimistic updates as core behavior.
 
-## User Scenarios & Testing *(mandatory)*
+## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Define Admin Resources Once (Priority: P1)
 
@@ -126,7 +126,7 @@ confirm both outputs are usable without manual restructuring.
 - How does the generator behave when a requested resource name would overwrite
   an existing file?
 
-## Requirements *(mandatory)*
+## Requirements _(mandatory)_
 
 ### Functional Requirements
 
@@ -194,7 +194,7 @@ confirm both outputs are usable without manual restructuring.
 - **FR-019**: The first release MUST focus on the shared engine and generator
   only, and MUST exclude adapter implementations for specific UI frameworks.
 
-### Constitution Alignment *(mandatory)*
+### Constitution Alignment _(mandatory)_
 
 - **Core Boundary**: This feature defines the shared engine and generator only.
   The shared engine remains free of rendering responsibilities, and framework
@@ -217,7 +217,7 @@ confirm both outputs are usable without manual restructuring.
   authorization behavior, response normalization, plugin registration, lifecycle
   hooks, state transitions, and generator output.
 
-### Key Entities *(include if feature involves data)*
+### Key Entities _(include if feature involves data)_
 
 - **Resource Definition**: A reusable admin resource that describes identity,
   labels, page references, searchable attributes, transport behavior, and the
@@ -246,7 +246,7 @@ confirm both outputs are usable without manual restructuring.
 - **Generator Template Output**: A starter resource definition created from a
   command and intended for further project-specific customization.
 
-## Success Criteria *(mandatory)*
+## Success Criteria _(mandatory)_
 
 ### Measurable Outcomes
 

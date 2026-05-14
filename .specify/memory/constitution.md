@@ -20,11 +20,13 @@ Sync Impact Report
 - Follow-up TODOs:
   - None
 -->
+
 # AtlasKit Constitution
 
 ## Core Principles
 
 ### I. Core-Adapter Separation
+
 `@atlaskit/core` MUST remain framework-agnostic and MUST NOT render UI or
 contain framework-specific code. Rendering responsibilities belong exclusively
 to framework adapters, which MUST consume core contracts without mutating their
@@ -32,6 +34,7 @@ semantics. Rationale: AtlasKit is intended to be a reusable frontend resource
 engine rather than a coupled application framework.
 
 ### II. TypeScript-First Public API
+
 All public APIs MUST be strongly typed, documented, and designed around
 TypeScript-first ergonomics. Core abstractions MUST favor OOP and SOLID
 principles, use static configuration APIs where configuration is part of the
@@ -41,6 +44,7 @@ consumer trust depends on predictable contracts, discoverable APIs, and stable
 extension points.
 
 ### III. Domain Completeness in Core
+
 Core owns the domain behaviors required to power resources across adapters:
 resources, fields, validation, localization, API transport, authorization,
 lifecycle hooks, events, state, caching, pagination normalization, plugins, and
@@ -53,6 +57,7 @@ shared engine responsibilities and cannot be delegated to UI layers without
 breaking consistency.
 
 ### IV. Normalized Extensibility Contracts
+
 API responses MUST be normalized into standard internal shapes for paginated,
 simple paginated, cursor paginated, and non-paginated responses before they are
 consumed elsewhere in the system. Plugins MUST be type-safe and able to
@@ -62,6 +67,7 @@ extensible contracts. Rationale: stable normalization and registration
 mechanisms are required for adapter independence and third-party extensions.
 
 ### V. Mandatory Verification
+
 Every public API and every engine subsystem introduced or changed by a feature
 MUST be covered by automated tests. This includes registries, field behavior,
 validation, transport normalization, localization, authorization, lifecycle

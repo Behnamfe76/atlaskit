@@ -5,9 +5,8 @@ import { configureResources } from "./configureResources";
 
 import type { AtlasConfig, AtlasRuntime } from "./AtlasConfig";
 
-const resourceRegistryToken = createServiceToken<ResourceRegistry>(
-  "resourceRegistry"
-);
+const resourceRegistryToken =
+  createServiceToken<ResourceRegistry>("resourceRegistry");
 
 export class Atlas {
   static #runtime?: AtlasRuntime;

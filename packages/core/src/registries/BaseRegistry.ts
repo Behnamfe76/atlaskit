@@ -1,4 +1,7 @@
-import { DuplicateRegistrationError, MissingResourceError } from "../support/errors";
+import {
+  DuplicateRegistrationError,
+  MissingResourceError
+} from "../support/errors";
 
 export class BaseRegistry<K, V> {
   readonly #entries = new Map<K, V>();

@@ -58,7 +58,7 @@ adapter packages are explicitly out of scope
 
 ## Constitution Check
 
-*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+_GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
 - `@atlaskit/core` boundary: PASS. Core is limited to registries, models,
   validation, i18n, transport, normalization, authorization, events, state,
@@ -146,5 +146,5 @@ outside published packages and is explicitly not a framework adapter.
 ## Complexity Tracking
 
 | Violation | Why Needed | Simpler Alternative Rejected Because |
-|-----------|------------|-------------------------------------|
-| None | N/A | N/A |
+| --------- | ---------- | ------------------------------------ |
+| None      | N/A        | N/A                                  |

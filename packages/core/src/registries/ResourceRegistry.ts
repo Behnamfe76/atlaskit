@@ -51,7 +51,11 @@ export class ResourceRegistry {
     const metadata = extractResourceMeta(resourceClass);
 
     if (this.#byId.has(metadata.id)) {
-      throw new DuplicateRegistrationError("ResourceRegistry", "id", metadata.id);
+      throw new DuplicateRegistrationError(
+        "ResourceRegistry",
+        "id",
+        metadata.id
+      );
     }
 
     if (this.#byUriKey.has(metadata.uriKey)) {

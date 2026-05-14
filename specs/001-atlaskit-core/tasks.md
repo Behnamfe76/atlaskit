@@ -1,7 +1,5 @@
 ---
-
 description: "Task list for AtlasKit Core Engine implementation"
-
 ---
 
 # Tasks: AtlasKit Core Engine
@@ -24,13 +22,13 @@ description: "Task list for AtlasKit Core Engine implementation"
 
 **Purpose**: Monorepo and package bootstrap for the first release
 
-- [X] T001 Create the workspace manifests in `package.json`, `pnpm-workspace.yaml`, and `tsconfig.base.json`
-- [X] T002 [P] Configure root TypeScript, build, and test defaults in `tsconfig.json`, `vitest.workspace.ts`, and `tsup.config.ts`
-- [X] T003 [P] Configure linting and formatting in `eslint.config.js`, `.prettierrc`, and `.prettierignore`
-- [X] T004 [P] Configure release management in `.changeset/config.json` and `.gitignore`
-- [X] T005 [P] Scaffold package manifests for `packages/core/package.json`, `packages/cli/package.json`, `packages/testing/package.json`, and `examples/playground/package.json`
-- [X] T006 [P] Scaffold package TypeScript configs in `packages/core/tsconfig.json`, `packages/cli/tsconfig.json`, `packages/testing/tsconfig.json`, and `examples/playground/tsconfig.json`
-- [X] T007 [P] Scaffold the initial workspace entry files and Vite playground bootstrap in `packages/core/src/index.ts`, `packages/cli/src/index.ts`, `packages/testing/src/index.ts`, `examples/playground/src/main.ts`, `examples/playground/index.html`, and `examples/playground/vite.config.ts`
+- [x] T001 Create the workspace manifests in `package.json`, `pnpm-workspace.yaml`, and `tsconfig.base.json`
+- [x] T002 [P] Configure root TypeScript, build, and test defaults in `tsconfig.json`, `vitest.workspace.ts`, and `tsup.config.ts`
+- [x] T003 [P] Configure linting and formatting in `eslint.config.js`, `.prettierrc`, and `.prettierignore`
+- [x] T004 [P] Configure release management in `.changeset/config.json` and `.gitignore`
+- [x] T005 [P] Scaffold package manifests for `packages/core/package.json`, `packages/cli/package.json`, `packages/testing/package.json`, and `examples/playground/package.json`
+- [x] T006 [P] Scaffold package TypeScript configs in `packages/core/tsconfig.json`, `packages/cli/tsconfig.json`, `packages/testing/tsconfig.json`, and `examples/playground/tsconfig.json`
+- [x] T007 [P] Scaffold the initial workspace entry files and Vite playground bootstrap in `packages/core/src/index.ts`, `packages/cli/src/index.ts`, `packages/testing/src/index.ts`, `examples/playground/src/main.ts`, `examples/playground/index.html`, and `examples/playground/vite.config.ts`
 
 ---
 
@@ -40,15 +38,15 @@ description: "Task list for AtlasKit Core Engine implementation"
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [X] T008 [P] Create failing unit tests for static bootstrap and service resolution in `packages/core/tests/unit/atlas/Atlas.test.ts` and `packages/core/tests/unit/container/ServiceContainer.test.ts`
-- [X] T009 [P] Create failing unit tests for registry duplicate protection and typed extension in `packages/core/tests/unit/registries/BaseRegistry.test.ts` and `packages/core/tests/unit/registries/RegistryErrors.test.ts`
-- [X] T010 [P] Create failing shared fixture tests for workspace helpers in `packages/testing/tests/fixtures.test.ts`
-- [X] T011 Implement the static bootstrap API in `packages/core/src/atlas/Atlas.ts`, `packages/core/src/atlas/AtlasConfig.ts`, and `packages/core/src/atlas/index.ts`
-- [X] T012 Implement the lightweight service container in `packages/core/src/container/ServiceContainer.ts` and `packages/core/src/container/serviceTokens.ts`
-- [X] T013 [P] Implement shared typed error and utility primitives in `packages/core/src/support/errors.ts`, `packages/core/src/support/invariant.ts`, and `packages/core/src/support/types.ts`
-- [X] T014 [P] Implement base domain contracts for actions, lenses, filters, metrics, and hooks in `packages/core/src/resources/Action.ts`, `packages/core/src/resources/Lens.ts`, `packages/core/src/resources/Filter.ts`, `packages/core/src/resources/Metric.ts`, and `packages/core/src/resources/Hooks.ts`
-- [X] T015 Implement the typed registry base classes in `packages/core/src/registries/BaseRegistry.ts`, `packages/core/src/registries/registryTypes.ts`, and `packages/core/src/registries/index.ts`
-- [X] T016 Implement shared test fixtures and builders in `packages/testing/src/fixtures/resourceFixtures.ts`, `packages/testing/src/fixtures/registryFixtures.ts`, and `packages/testing/src/index.ts`
+- [x] T008 [P] Create failing unit tests for static bootstrap and service resolution in `packages/core/tests/unit/atlas/Atlas.test.ts` and `packages/core/tests/unit/container/ServiceContainer.test.ts`
+- [x] T009 [P] Create failing unit tests for registry duplicate protection and typed extension in `packages/core/tests/unit/registries/BaseRegistry.test.ts` and `packages/core/tests/unit/registries/RegistryErrors.test.ts`
+- [x] T010 [P] Create failing shared fixture tests for workspace helpers in `packages/testing/tests/fixtures.test.ts`
+- [x] T011 Implement the static bootstrap API in `packages/core/src/atlas/Atlas.ts`, `packages/core/src/atlas/AtlasConfig.ts`, and `packages/core/src/atlas/index.ts`
+- [x] T012 Implement the lightweight service container in `packages/core/src/container/ServiceContainer.ts` and `packages/core/src/container/serviceTokens.ts`
+- [x] T013 [P] Implement shared typed error and utility primitives in `packages/core/src/support/errors.ts`, `packages/core/src/support/invariant.ts`, and `packages/core/src/support/types.ts`
+- [x] T014 [P] Implement base domain contracts for actions, lenses, filters, metrics, and hooks in `packages/core/src/resources/Action.ts`, `packages/core/src/resources/Lens.ts`, `packages/core/src/resources/Filter.ts`, `packages/core/src/resources/Metric.ts`, and `packages/core/src/resources/Hooks.ts`
+- [x] T015 Implement the typed registry base classes in `packages/core/src/registries/BaseRegistry.ts`, `packages/core/src/registries/registryTypes.ts`, and `packages/core/src/registries/index.ts`
+- [x] T016 Implement shared test fixtures and builders in `packages/testing/src/fixtures/resourceFixtures.ts`, `packages/testing/src/fixtures/registryFixtures.ts`, and `packages/testing/src/index.ts`
 
 **Checkpoint**: Workspace and foundational core bootstrap are ready; user story implementation can proceed
 
@@ -64,18 +62,18 @@ description: "Task list for AtlasKit Core Engine implementation"
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [X] T017 [P] [US1] Create contract tests for the core public API in `packages/core/tests/integration/contracts/atlas-core-api.contract.test.ts`
-- [X] T018 [P] [US1] Create integration tests for resource registration and duplicate failures in `packages/core/tests/integration/resources/resource-registration.test.ts`
-- [X] T019 [P] [US1] Create integration tests for resource metadata resolution in `packages/core/tests/integration/resources/resource-metadata.test.ts`
+- [x] T017 [P] [US1] Create contract tests for the core public API in `packages/core/tests/integration/contracts/atlas-core-api.contract.test.ts`
+- [x] T018 [P] [US1] Create integration tests for resource registration and duplicate failures in `packages/core/tests/integration/resources/resource-registration.test.ts`
+- [x] T019 [P] [US1] Create integration tests for resource metadata resolution in `packages/core/tests/integration/resources/resource-metadata.test.ts`
 
 ### Implementation for User Story 1
 
-- [X] T020 [P] [US1] Implement the base resource contracts in `packages/core/src/resources/Resource.ts` and `packages/core/src/resources/resourceTypes.ts`
-- [X] T021 [P] [US1] Implement resource metadata helpers in `packages/core/src/resources/resourceMeta.ts` and `packages/core/src/resources/resourcePages.ts`
-- [X] T022 [P] [US1] Implement the resource registry in `packages/core/src/registries/ResourceRegistry.ts`
-- [X] T023 [P] [US1] Implement resource collection exports in `packages/core/src/resources/index.ts`
-- [X] T024 [US1] Wire resource registration into startup configuration in `packages/core/src/atlas/configureResources.ts` and `packages/core/src/atlas/Atlas.ts`
-- [X] T025 [US1] Export the stable public resource authoring surface in `packages/core/src/index.ts`
+- [x] T020 [P] [US1] Implement the base resource contracts in `packages/core/src/resources/Resource.ts` and `packages/core/src/resources/resourceTypes.ts`
+- [x] T021 [P] [US1] Implement resource metadata helpers in `packages/core/src/resources/resourceMeta.ts` and `packages/core/src/resources/resourcePages.ts`
+- [x] T022 [P] [US1] Implement the resource registry in `packages/core/src/registries/ResourceRegistry.ts`
+- [x] T023 [P] [US1] Implement resource collection exports in `packages/core/src/resources/index.ts`
+- [x] T024 [US1] Wire resource registration into startup configuration in `packages/core/src/atlas/configureResources.ts` and `packages/core/src/atlas/Atlas.ts`
+- [x] T025 [US1] Export the stable public resource authoring surface in `packages/core/src/index.ts`
 
 **Checkpoint**: User Story 1 provides a complete, independently testable resource definition and registration workflow
 
