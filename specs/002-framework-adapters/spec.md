@@ -11,6 +11,29 @@ first implementation target is @atlaskit/vue. Future adapter packages are
 @atlaskit/react, @atlaskit/dom, @atlaskit/angular, @atlaskit/svelte, and
 @atlaskit/solid."
 
+## Clarifications
+
+### Session 2026-05-15
+
+- Q: How should adapter components reference the target resource? → A: Accept
+  one `resource` prop that may be a resource class, registered resource
+  instance, or `uriKey`, and normalize through shared adapter utilities.
+- Q: How should `AtlasResourceTable` preserve sorting, filtering, search, and
+  pagination state? → A: Support both uncontrolled internal state with initial
+  values and controlled external state with change events.
+- Q: How should `AtlasResourceForm` represent create vs edit behavior? → A:
+  Require an explicit `mode` prop with `create` or `edit`, with record data
+  provided separately when needed.
+- Q: What belongs in `@atlaskit/vue` versus shared adapter utilities? → A: Put
+  resource normalization, resource input resolution, shared state/action
+  contracts, class-map/theme-token schemas, and reusable adapter behavior
+  tests in shared utilities; keep Vue components, composables, emits, and
+  slots in `@atlaskit/vue`.
+- Q: How should adapters render unauthorized resources, fields, and actions?
+  → A: Use shared behavior rules: hide items when core marks them not visible,
+  disable items when core marks them visible-but-not-executable, and expose
+  both states through the adapter contract.
+
 ## User Scenarios & Testing _(mandatory)_
 
 ### User Story 1 - Render Core Resources in an App (Priority: P1)
@@ -35,12 +58,20 @@ without custom rendering logic for the same behaviors.
    sees the resource’s list view with loading, empty, error, sorting, search,
    filtering, pagination, field visibility, and row actions resolved from core
    semantics.
-2. **Given** an application mounts `AtlasResourceForm` for create or edit
+2. **Given** an application chooses either adapter-managed defaults or
+   application-managed table state, **When** sorting, search, filtering, or
+   pagination changes, **Then** the table preserves the selected ownership
+   model and exposes the resulting state updates consistently.
+3. **Given** an application mounts `AtlasResourceForm` for create or edit
    workflows, **When** a user changes field values, **Then** the form reflects
    defaults, validation errors, field dependencies, async dependency results,
    authorization visibility, and submission actions according to the core
    resource definition.
-3. **Given** an application mounts `AtlasResourceShow`,
+4. **Given** an application provides form workflow intent explicitly,
+   **When** the form is mounted before or after record data loads, **Then** the
+   adapter preserves the declared create or edit mode independently from record
+   presence.
+5. **Given** an application mounts `AtlasResourceShow`,
    `AtlasFieldRenderer`, or `AtlasActionRunner`, **When** the underlying
    resource metadata changes or the query state updates, **Then** the rendered
    output stays synchronized with the same core resource semantics used by the
@@ -115,6 +146,11 @@ adapter packages can be measured against the same expected outcomes.
   class maps, or incomplete theme tokens?
 - How does the adapter behave when a custom field or action presentation point
   is provided for one state but not another?
+- How does the adapter distinguish unauthorized items that should be hidden
+  entirely from items that should remain visible but disabled?
+- How are relationship fields such as `BelongsTo` and `BelongsToMany` rendered
+  when related records are partially loaded, empty, or unavailable in list,
+  form, and show workflows?
 
 ## Requirements _(mandatory)_
 
@@ -131,6 +167,10 @@ adapter packages can be measured against the same expected outcomes.
 - **FR-004**: Every adapter package MUST provide reusable public surfaces for
   `AtlasResourceTable`, `AtlasResourceForm`, `AtlasResourceShow`,
   `AtlasFieldRenderer`, and `AtlasActionRunner`.
+- **FR-004a**: Adapter component surfaces MUST accept one `resource` input that
+  may be provided as a resource class, registered resource instance, or
+  `uriKey`, and MUST normalize that input through shared adapter utilities
+  before rendering begins.
 - **FR-005**: Adapter packages MUST render AtlasKit resource metadata, fields,
   actions, validation state, authorization visibility, and query state using
   the semantics resolved by `@atlaskit/core`.
@@ -144,13 +184,29 @@ adapter packages can be measured against the same expected outcomes.
 - **FR-008**: The first delivered adapter MUST support resource list workflows
   including loading, empty, error, pagination, sorting, search, filtering, row
   actions, and authorization-aware field visibility.
+- **FR-008a**: `AtlasResourceTable` MUST support both uncontrolled internal
+  state with initial values and controlled external state with change events
+  for sorting, search, filtering, and pagination.
 - **FR-009**: The first delivered adapter MUST support create and edit
   workflows including defaults, field dependencies, async dependencies,
   validation feedback, authorization-aware field visibility, submission state,
   and action execution.
+- **FR-009a**: `AtlasResourceForm` MUST require an explicit `mode` input with
+  `create` or `edit`, and any existing record data used for edit workflows MUST
+  be supplied independently from the mode declaration.
 - **FR-010**: The first delivered adapter MUST support read-only resource
   detail workflows and single-field rendering workflows using the same core
   field semantics used by list and form views.
+- **FR-010b**: Adapter packages MUST define explicit rendering and interaction
+  behavior for the current core relationship field families, including
+  `BelongsTo` and `BelongsToMany`, across table, form, show, and
+  field-renderer surfaces. Future relationship field families such as
+  `HasMany`, if introduced later in core, are outside this delivery unless
+  separately specified.
+- **FR-010a**: Adapter packages MUST apply one shared authorization rendering
+  contract: items marked not visible by core are hidden, and items marked
+  visible-but-not-executable remain rendered in a disabled state that is
+  exposed consistently through the adapter contract.
 - **FR-011**: Adapter packages MUST allow application developers to customize
   field presentation, action presentation, and component styling without
   duplicating or redefining core behavior.
@@ -159,6 +215,10 @@ adapter packages can be measured against the same expected outcomes.
 - **FR-013**: Adapter packages MUST be composed from smaller reusable
   primitives where that decomposition improves customization, testing, or
   contract reuse.
+- **FR-013a**: Shared adapter utilities MUST own resource normalization,
+  resource input resolution, shared state and action contracts, class-map and
+  theme-token schemas, and reusable adapter behavior tests. `@atlaskit/vue`
+  MUST own Vue-specific components, composables, emits, and slot surfaces.
 - **FR-014**: The system MUST define one shared adapter behavior contract that
   describes how required adapter components represent resource tables, forms,
   show views, fields, actions, state transitions, and authorization outcomes.
@@ -182,13 +242,14 @@ adapter packages can be measured against the same expected outcomes.
 - **Public API Impact**: This feature introduces public adapter package
   surfaces for `@atlaskit/vue`, the required reusable rendering components,
   framework-native bindings for resource and state consumption, customization
-  entry points for fields/actions/styling, and the shared adapter behavior
-  contract that future adapters must satisfy.
+  entry points for fields/actions/styling, a normalized `resource` input
+  contract, and the shared adapter behavior contract that future adapters must
+  satisfy.
 - **Domain Coverage**: The feature affects adapter rendering, state/query
   consumption, field presentation, validation display, authorization
-  visibility, action execution, and adapter-level customization while relying
-  on existing core capabilities for validation, localization, transport,
-  events, caching, and registries.
+  visibility, action execution, relationship-field presentation, and
+  adapter-level customization while relying on existing core capabilities for
+  validation, localization, transport, events, caching, and registries.
 - **Normalization/Plugin Impact**: No new response normalization model is
   introduced. Adapters consume the normalized results already produced by core.
   Plugin and registry work is limited to the extent required to let adapter
@@ -198,13 +259,20 @@ adapter packages can be measured against the same expected outcomes.
   framework-native state binding, component APIs, customization surfaces, and
   integration with core state/query services. Routing and pages remain owned by
   the host application and are excluded from adapter scope.
+- **Shared Utility Boundary**: Shared adapter utilities own resource
+  normalization, resource input resolution, shared state and action contracts,
+  class-map and theme-token schemas, and reusable adapter behavior tests.
+  `@atlaskit/vue` owns Vue components, composables, emits, and slot behavior
+  built on top of those shared contracts.
 - **Adapter Contract Surface**: The feature delivers
   `AtlasResourceTable`, `AtlasResourceForm`, `AtlasResourceShow`,
   `AtlasFieldRenderer`, and `AtlasActionRunner` as reusable dynamic components.
   The first shipped adapter is `@atlaskit/vue`; future React, DOM, Angular,
   Svelte, and Solid adapters must match the same behavior contract. The DOM
   adapter is defined as a future mount-style renderer for plain JavaScript and
-  HTML.
+  HTML. `AtlasResourceTable` specifically supports both controlled and
+  uncontrolled state ownership models, and `AtlasResourceForm` uses an explicit
+  create or edit mode contract.
 - **Styling/Customization**: Adapter styling uses utility-class based defaults
   with class-map overrides, theme tokens, and framework-native customization
   patterns. The first shipped adapter also supports field and action
@@ -212,7 +280,8 @@ adapter packages can be measured against the same expected outcomes.
 - **Verification Scope**: Validation must cover shared adapter behavior
   contracts, reusable component rendering, list/form/show workflows, field
   rendering, action execution, customization surfaces, and parity between the
-  first shipped adapter and future adapter expectations.
+  first shipped adapter and future adapter expectations, including hidden
+  versus disabled authorization outcomes.
 
 ### Key Entities _(include if feature involves data)_
 
@@ -225,13 +294,33 @@ adapter packages can be measured against the same expected outcomes.
 - **Adapter Component Surface**: One of the required reusable dynamic
   components that renders a distinct AtlasKit resource workflow inside an
   application.
+- **Table State Contract**: The shared adapter model for sorting, search,
+  filtering, and pagination, supporting either adapter-managed internal state
+  with initial values or application-managed controlled state with change
+  events.
 - **Adapter Binding Surface**: The framework-native mechanism used by an
   application to look up resources, observe state, receive validation data, and
   execute actions from the adapter.
+- **Shared Adapter Utility**: A framework-agnostic support layer that resolves
+  resource inputs, defines common state and action contracts, defines styling
+  schemas, and hosts reusable adapter behavior tests for all framework
+  packages.
+- **Resource Input Contract**: The shared adapter input shape that accepts a
+  resource class, registered resource instance, or `uriKey` and resolves it
+  into a canonical resource reference before component logic runs.
 - **Styling Theme Contract**: The set of default classes, class maps, and
   theme tokens that controls adapter presentation without changing core logic.
 - **Customization Slot**: An application-owned presentation override for a
   field, action, or component region that preserves the same core behavior.
+- **Form Mode Contract**: The explicit adapter input that declares whether a
+  form is operating in `create` or `edit` mode independent of whether a record
+  payload has already been loaded.
+- **Authorization Rendering Contract**: The shared adapter rule that hides
+  resources, fields, or actions when core marks them not visible and renders
+  them disabled when core marks them visible but not executable.
+- **Relationship Field Contract**: The shared adapter behavior for the current
+  core relationship field families, including `BelongsTo` and `BelongsToMany`,
+  across table, form, show, and single-field rendering surfaces.
 
 ## Success Criteria _(mandatory)_
 

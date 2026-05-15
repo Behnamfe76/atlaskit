@@ -2,6 +2,6 @@
 
 For additional context about technologies to be used, project structure,
 shell commands, and other important information, read
-[specs/001-atlaskit-core/plan.md](specs/001-atlaskit-core/plan.md)
+[specs/002-framework-adapters/plan.md](specs/002-framework-adapters/plan.md)
 
 <!-- SPECKIT END -->
