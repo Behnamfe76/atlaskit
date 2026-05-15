@@ -1,3 +1,5 @@
+import type { AuthorizationConfig } from "../authorization/authorizationTypes";
+
 import type { LifecycleHooks } from "./Hooks";
 import type {
   PaginationMode,
@@ -14,6 +16,7 @@ export abstract class Resource {
   static searchable?: readonly string[];
   static uriKey?: string;
   static endpoints?: ResourceEndpoints;
+  static authorization?: AuthorizationConfig;
 
   actions(): readonly unknown[] {
     return [];

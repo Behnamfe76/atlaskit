@@ -87,32 +87,32 @@ description: "Task list for AtlasKit Core Engine implementation"
 
 ### Tests for User Story 2
 
-- [ ] T026 [P] [US2] Create integration tests for field visibility and dependency resolution in `packages/core/tests/integration/fields/field-resolution.test.ts` and `packages/core/tests/integration/fields/dependency-resolution.test.ts`
-- [ ] T027 [P] [US2] Create unit tests for rule parsing and validation registry behavior in `packages/core/tests/unit/validation/RuleParser.test.ts` and `packages/core/tests/unit/validation/ValidationRegistry.test.ts`
-- [ ] T028 [P] [US2] Create unit tests for localization and locale registry behavior with default `en` and sample `fa`/`ar` bundles in `packages/core/tests/unit/i18n/I18n.test.ts` and `packages/core/tests/unit/i18n/LocaleRegistry.test.ts`
-- [ ] T029 [P] [US2] Create integration tests for REST and GraphQL normalization in `packages/core/tests/integration/transport/ResponseNormalizer.test.ts` and `packages/core/tests/integration/transport/GraphQLNormalizer.test.ts`
-- [ ] T030 [P] [US2] Create integration tests for query/cache state and optimistic writes in `packages/core/tests/integration/cache/QueryClient.test.ts`
-- [ ] T031 [P] [US2] Create unit and integration tests for authorization and lifecycle events in `packages/core/tests/unit/authorization/AuthorizationManager.test.ts` and `packages/core/tests/integration/events/lifecycle-events.test.ts`
+- [x] T026 [P] [US2] Create integration tests for field visibility and dependency resolution in `packages/core/tests/integration/fields/field-resolution.test.ts` and `packages/core/tests/integration/fields/dependency-resolution.test.ts`
+- [x] T027 [P] [US2] Create unit tests for rule parsing and validation registry behavior in `packages/core/tests/unit/validation/RuleParser.test.ts` and `packages/core/tests/unit/validation/ValidationRegistry.test.ts`
+- [x] T028 [P] [US2] Create unit tests for localization and locale registry behavior with default `en` and sample `fa`/`ar` bundles in `packages/core/tests/unit/i18n/I18n.test.ts` and `packages/core/tests/unit/i18n/LocaleRegistry.test.ts`
+- [x] T029 [P] [US2] Create integration tests for REST and GraphQL normalization in `packages/core/tests/integration/transport/ResponseNormalizer.test.ts` and `packages/core/tests/integration/transport/GraphQLNormalizer.test.ts`
+- [x] T030 [P] [US2] Create integration tests for query/cache state and optimistic writes in `packages/core/tests/integration/cache/QueryClient.test.ts`
+- [x] T031 [P] [US2] Create unit and integration tests for authorization and lifecycle events in `packages/core/tests/unit/authorization/AuthorizationManager.test.ts` and `packages/core/tests/integration/events/lifecycle-events.test.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T032 [P] [US2] Implement the fluent field base class in `packages/core/src/fields/Field.ts` and `packages/core/src/fields/fieldTypes.ts`
-- [ ] T033 [P] [US2] Implement scalar field classes in `packages/core/src/fields/scalar/ID.ts`, `packages/core/src/fields/scalar/Text.ts`, `packages/core/src/fields/scalar/Textarea.ts`, `packages/core/src/fields/scalar/Number.ts`, `packages/core/src/fields/scalar/Currency.ts`, `packages/core/src/fields/scalar/Date.ts`, `packages/core/src/fields/scalar/Select.ts`, and `packages/core/src/fields/scalar/MultiSelect.ts`
-- [ ] T034 [P] [US2] Implement relationship and structural field classes in `packages/core/src/fields/relations/BelongsTo.ts`, `packages/core/src/fields/relations/BelongsToMany.ts`, `packages/core/src/fields/media/Image.ts`, `packages/core/src/fields/media/File.ts`, `packages/core/src/fields/media/Video.ts`, `packages/core/src/fields/compound/KeyValue.ts`, `packages/core/src/fields/compound/Repeater.ts`, `packages/core/src/fields/layout/Heading.ts`, and `packages/core/src/fields/layout/FieldWrapper.ts`
-- [ ] T035 [US2] Implement field registry and field capability resolution in `packages/core/src/registries/FieldRegistry.ts` and `packages/core/src/fields/fieldRegistryTypes.ts`
-- [ ] T036 [US2] Implement visibility and dependency resolution in `packages/core/src/fields/visibility.ts` and `packages/core/src/fields/DependencyResolver.ts`
-- [ ] T037 [P] [US2] Implement typed rule builders in `packages/core/src/validation/Rule.ts` and `packages/core/src/validation/ruleTypes.ts`
-- [ ] T038 [US2] Implement string rule parsing and validation registry registration in `packages/core/src/validation/ruleParser.ts` and `packages/core/src/registries/ValidationRegistry.ts`
-- [ ] T039 [US2] Implement validation execution and built-in rules in `packages/core/src/validation/Validator.ts` and `packages/core/src/validation/builtin/index.ts`
-- [ ] T040 [P] [US2] Implement locale bundle types, default English messages, and sample `fa`/`ar` bundles in `packages/core/src/i18n/localeTypes.ts`, `packages/core/src/i18n/locales/en.ts`, `packages/core/src/i18n/locales/fa.ts`, `packages/core/src/i18n/locales/ar.ts`, and `packages/core/src/registries/LocaleRegistry.ts`
-- [ ] T041 [US2] Implement the i18n service with RTL, date formatting, and currency formatting support in `packages/core/src/i18n/I18n.ts`
-- [ ] T042 [P] [US2] Implement transport contracts and clients in `packages/core/src/transport/ApiClient.ts`, `packages/core/src/transport/rest/RestClient.ts`, and `packages/core/src/transport/graphql/GraphQLClient.ts`
-- [ ] T043 [US2] Implement REST and GraphQL response normalization in `packages/core/src/transport/ResponseNormalizer.ts`, `packages/core/src/transport/normalizers/rest.ts`, and `packages/core/src/transport/normalizers/graphql.ts`
-- [ ] T044 [P] [US2] Implement query/cache state models and subscriptions in `packages/core/src/cache/QueryClient.ts` and `packages/core/src/cache/cacheTypes.ts`
-- [ ] T045 [US2] Implement invalidation, writes, optimistic updates, and pagination state in `packages/core/src/cache/queryMutations.ts` and `packages/core/src/cache/pagination.ts`
-- [ ] T046 [P] [US2] Implement authorization contracts and manager in `packages/core/src/authorization/authorizationTypes.ts` and `packages/core/src/authorization/AuthorizationManager.ts`
-- [ ] T047 [P] [US2] Implement the event bus and event contracts in `packages/core/src/events/EventBus.ts` and `packages/core/src/events/eventTypes.ts`
-- [ ] T048 [US2] Integrate lifecycle hooks and shared services into runtime configuration in `packages/core/src/atlas/defaultServices.ts`, `packages/core/src/atlas/runtimeHooks.ts`, and `packages/core/src/index.ts`
+- [x] T032 [P] [US2] Implement the fluent field base class in `packages/core/src/fields/Field.ts` and `packages/core/src/fields/fieldTypes.ts`
+- [x] T033 [P] [US2] Implement scalar field classes in `packages/core/src/fields/scalar/ID.ts`, `packages/core/src/fields/scalar/Text.ts`, `packages/core/src/fields/scalar/Textarea.ts`, `packages/core/src/fields/scalar/Number.ts`, `packages/core/src/fields/scalar/Currency.ts`, `packages/core/src/fields/scalar/Date.ts`, `packages/core/src/fields/scalar/Select.ts`, and `packages/core/src/fields/scalar/MultiSelect.ts`
+- [x] T034 [P] [US2] Implement relationship and structural field classes in `packages/core/src/fields/relations/BelongsTo.ts`, `packages/core/src/fields/relations/BelongsToMany.ts`, `packages/core/src/fields/media/Image.ts`, `packages/core/src/fields/media/File.ts`, `packages/core/src/fields/media/Video.ts`, `packages/core/src/fields/compound/KeyValue.ts`, `packages/core/src/fields/compound/Repeater.ts`, `packages/core/src/fields/layout/Heading.ts`, and `packages/core/src/fields/layout/FieldWrapper.ts`
+- [x] T035 [US2] Implement field registry and field capability resolution in `packages/core/src/registries/FieldRegistry.ts` and `packages/core/src/fields/fieldRegistryTypes.ts`
+- [x] T036 [US2] Implement visibility and dependency resolution in `packages/core/src/fields/visibility.ts` and `packages/core/src/fields/DependencyResolver.ts`
+- [x] T037 [P] [US2] Implement typed rule builders in `packages/core/src/validation/Rule.ts` and `packages/core/src/validation/ruleTypes.ts`
+- [x] T038 [US2] Implement string rule parsing and validation registry registration in `packages/core/src/validation/ruleParser.ts` and `packages/core/src/registries/ValidationRegistry.ts`
+- [x] T039 [US2] Implement validation execution and built-in rules in `packages/core/src/validation/Validator.ts` and `packages/core/src/validation/builtin/index.ts`
+- [x] T040 [P] [US2] Implement locale bundle types, default English messages, and sample `fa`/`ar` bundles in `packages/core/src/i18n/localeTypes.ts`, `packages/core/src/i18n/locales/en.ts`, `packages/core/src/i18n/locales/fa.ts`, `packages/core/src/i18n/locales/ar.ts`, and `packages/core/src/registries/LocaleRegistry.ts`
+- [x] T041 [US2] Implement the i18n service with RTL, date formatting, and currency formatting support in `packages/core/src/i18n/I18n.ts`
+- [x] T042 [P] [US2] Implement transport contracts and clients in `packages/core/src/transport/ApiClient.ts`, `packages/core/src/transport/rest/RestClient.ts`, and `packages/core/src/transport/graphql/GraphQLClient.ts`
+- [x] T043 [US2] Implement REST and GraphQL response normalization in `packages/core/src/transport/ResponseNormalizer.ts`, `packages/core/src/transport/normalizers/rest.ts`, and `packages/core/src/transport/normalizers/graphql.ts`
+- [x] T044 [P] [US2] Implement query/cache state models and subscriptions in `packages/core/src/cache/QueryClient.ts` and `packages/core/src/cache/cacheTypes.ts`
+- [x] T045 [US2] Implement invalidation, writes, optimistic updates, and pagination state in `packages/core/src/cache/queryMutations.ts` and `packages/core/src/cache/pagination.ts`
+- [x] T046 [P] [US2] Implement authorization contracts and manager in `packages/core/src/authorization/authorizationTypes.ts` and `packages/core/src/authorization/AuthorizationManager.ts`
+- [x] T047 [P] [US2] Implement the event bus and event contracts in `packages/core/src/events/EventBus.ts` and `packages/core/src/events/eventTypes.ts`
+- [x] T048 [US2] Integrate lifecycle hooks and shared services into runtime configuration in `packages/core/src/atlas/defaultServices.ts`, `packages/core/src/atlas/runtimeHooks.ts`, and `packages/core/src/index.ts`
 
 **Checkpoint**: User Story 2 provides a complete, independently testable engine for fields and cross-cutting business rules
 
@@ -126,19 +126,19 @@ description: "Task list for AtlasKit Core Engine implementation"
 
 ### Tests for User Story 3
 
-- [ ] T049 [P] [US3] Create integration tests for plugin registration boundaries in `packages/core/tests/integration/plugins/PluginRegistry.test.ts`
-- [ ] T050 [P] [US3] Create CLI generator contract tests in `packages/cli/tests/generate-resource.test.ts`
-- [ ] T051 [P] [US3] Create manual smoke coverage for generated resource bootstrap in `examples/playground/tests/resource-generator-smoke.test.ts`
+- [x] T049 [P] [US3] Create integration tests for plugin registration boundaries in `packages/core/tests/integration/plugins/PluginRegistry.test.ts`
+- [x] T050 [P] [US3] Create CLI generator contract tests in `packages/cli/tests/generate-resource.test.ts`
+- [x] T051 [P] [US3] Create manual smoke coverage for generated resource bootstrap in `examples/playground/tests/resource-generator-smoke.test.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T052 [P] [US3] Implement plugin contracts in `packages/core/src/plugins/pluginTypes.ts` and `packages/core/src/plugins/Plugin.ts`
-- [ ] T053 [US3] Implement the plugin registry in `packages/core/src/registries/PluginRegistry.ts` and `packages/core/src/plugins/registerPlugin.ts`
-- [ ] T054 [US3] Wire plugin registration into startup configuration in `packages/core/src/atlas/configurePlugins.ts` and `packages/core/src/atlas/Atlas.ts`
-- [ ] T055 [P] [US3] Create typed resource stub templates in `packages/cli/src/stubs/resource.ts` and `packages/cli/src/stubs/templates/resource.hbs`
-- [ ] T056 [US3] Implement the `generate resource` command in `packages/cli/src/commands/generateResource.ts` and `packages/cli/src/index.ts`
-- [ ] T057 [US3] Implement CLI file output and overwrite handling in `packages/cli/src/io/writeGeneratedFile.ts` and `packages/cli/src/formatters/resourceTemplate.ts`
-- [ ] T058 [US3] Add plugin and generated resource smoke bootstrap in `examples/playground/src/bootstrap.ts`, `examples/playground/src/main.ts`, and `examples/playground/src/app.ts`
+- [x] T052 [P] [US3] Implement plugin contracts in `packages/core/src/plugins/pluginTypes.ts` and `packages/core/src/plugins/Plugin.ts`
+- [x] T053 [US3] Implement the plugin registry in `packages/core/src/registries/PluginRegistry.ts` and `packages/core/src/plugins/registerPlugin.ts`
+- [x] T054 [US3] Wire plugin registration into startup configuration in `packages/core/src/atlas/configurePlugins.ts` and `packages/core/src/atlas/Atlas.ts`
+- [x] T055 [P] [US3] Create typed resource stub templates in `packages/cli/src/stubs/resource.ts` and `packages/cli/src/stubs/templates/resource.hbs`
+- [x] T056 [US3] Implement the `generate resource` command in `packages/cli/src/commands/generateResource.ts` and `packages/cli/src/index.ts`
+- [x] T057 [US3] Implement CLI file output and overwrite handling in `packages/cli/src/io/writeGeneratedFile.ts` and `packages/cli/src/formatters/resourceTemplate.ts`
+- [x] T058 [US3] Add plugin and generated resource smoke bootstrap in `examples/playground/src/bootstrap.ts`, `examples/playground/src/main.ts`, and `examples/playground/src/app.ts`
 
 **Checkpoint**: User Story 3 provides a complete, independently testable extension and scaffolding workflow
 
