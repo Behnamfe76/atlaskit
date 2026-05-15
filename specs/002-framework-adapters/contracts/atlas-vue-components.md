@@ -20,6 +20,7 @@ in first delivery.
 - Accepts class-map and theme-token overrides
 - Exposes slots for table regions, rows, cells, empty state, loading state, and
   actions
+- Exposes typed slot props for table state, row context, and cell context
 
 ### `AtlasResourceForm`
 
@@ -32,6 +33,7 @@ in first delivery.
 - Supports current core relationship fields, including `BelongsTo` and
   `BelongsToMany`, using core-driven visibility, values, and async option data
 - Accepts class-map and theme-token overrides
+- Exposes typed slot props for whole-form and per-field customization
 
 ### `AtlasResourceShow`
 
@@ -42,6 +44,7 @@ in first delivery.
 - Renders current core relationship fields, including `BelongsTo` and
   `BelongsToMany`, using show/detail metadata
 - Accepts class-map and theme-token overrides
+- Exposes typed slots for loading, error, default, and action regions
 
 ### `AtlasFieldRenderer`
 
@@ -50,6 +53,7 @@ in first delivery.
 - Supports current core relationship field metadata, including `BelongsTo` and
   `BelongsToMany`, across index, show, create, and edit modes
 - Preserves hidden-versus-disabled authorization behavior from core semantics
+- Accepts class-map and theme-token overrides for labels, controls, and errors
 
 ### `AtlasActionRunner`
 
@@ -57,6 +61,7 @@ in first delivery.
 - Accepts selected rows or a single record context
 - Exposes loading, executable, disabled, and result states
 - Supports action-specific slots
+- Accepts class-map and theme-token overrides for action groups and buttons
 
 ## Required Composables
 
@@ -77,6 +82,8 @@ Each composable returns strongly typed refs/computed state derived from
 - Slot props are exported as public types
 - Class-map and theme-token types are exported as public types
 - Emits, where present, are typed and documented
+- Slot prop exports cover rows, cells, form fields, field render state, and
+  action execution handlers
 
 ## Exclusions
 

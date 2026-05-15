@@ -1,10 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  createClassMap,
-  mergeThemeTokens,
-  useAtlasTheme
-} from "../../src";
+import { createClassMap, mergeThemeTokens, useAtlasTheme } from "../../src";
 
 describe("useAtlasTheme", () => {
   it("merges nested class maps while preserving defaults", () => {
@@ -16,8 +12,7 @@ describe("useAtlasTheme", () => {
     });
 
     expect(classes.resourceTable).toMatchObject({
-      root:
-        "overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ring-1 ring-sky-500",
+      root: "overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ring-1 ring-sky-500",
       toolbar:
         "flex flex-wrap items-center gap-3 border-b border-slate-200 px-4 py-3 justify-between"
     });

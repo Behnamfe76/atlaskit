@@ -162,4 +162,4 @@ contracts without reusing Vue code.
 
 | Violation | Why Needed | Simpler Alternative Rejected Because |
 | --------- | ---------- | ------------------------------------ |
-| None | N/A | N/A |
+| None      | N/A        | N/A                                  |

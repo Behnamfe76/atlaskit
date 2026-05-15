@@ -35,7 +35,10 @@ export function resolveResourceReference(
 
     return {
       identifier:
-        resourceClass.uriKey ?? resourceClass.id ?? resourceClass.name ?? "resource",
+        resourceClass.uriKey ??
+        resourceClass.id ??
+        resourceClass.name ??
+        "resource",
       kind: "instance",
       resourceClass
     };

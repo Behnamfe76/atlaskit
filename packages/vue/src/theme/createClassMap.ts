@@ -23,10 +23,7 @@ function mergeNodes(base: ClassMapNode, override: ClassMapNode): ClassMapNode {
   return normalizeClassValue(base as never, override as never);
 }
 
-export function mergeClassMaps(
-  base: ClassMap,
-  override?: ClassMap
-): ClassMap {
+export function mergeClassMaps(base: ClassMap, override?: ClassMap): ClassMap {
   if (!override) {
     return { ...base };
   }
@@ -47,7 +44,10 @@ export function mergeClassMaps(
   return merged;
 }
 
-function mergeThemeNodes(base: ThemeTokenNode, override: ThemeTokenNode): ThemeTokenNode {
+function mergeThemeNodes(
+  base: ThemeTokenNode,
+  override: ThemeTokenNode
+): ThemeTokenNode {
   if (isPlainObject(base) && isPlainObject(override)) {
     return mergeThemeTokens(base as ThemeTokens, override as ThemeTokens);
   }

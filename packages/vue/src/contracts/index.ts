@@ -8,6 +8,9 @@ export type {
 export type {
   ActionRunnerSlotProps,
   FieldRendererSlotProps,
+  ResourceFormFieldSlotProps,
+  ResourceTableCellSlotProps,
+  ResourceTableRowSlotProps,
   ResourceFormSlotProps,
   ResourceShowSlotProps,
   ResourceTableSlotProps

@@ -39,12 +39,14 @@ satisfy, with `@atlaskit/vue` as the first implemented reference adapter.
 - Class-map overrides replace or extend the intended component regions
 - Theme tokens affect presentation without changing resource semantics
 - Slots may fully override presentation while preserving behavior contracts
+- Shared slot contracts expose row, cell, field, and action execution context
 
 ### Action Execution
 
 - Record-level and bulk action contexts are supported
 - Executable and disabled states are exposed consistently
 - Action execution updates loading and result states predictably
+- Slot-driven action rendering must still execute the same runtime semantics
 
 ## Reference Adapter Rule
 
@@ -52,6 +54,8 @@ satisfy, with `@atlaskit/vue` as the first implemented reference adapter.
 - Future `dom`, `react`, `angular`, `svelte`, and `solid` adapters must satisfy
   the same behavior scenarios unless an exception is explicitly documented and
   approved
+- Future adapters must preserve the same top-level component and composable
+  surface unless an approved exception is documented
 
 ## Package Boundary
 

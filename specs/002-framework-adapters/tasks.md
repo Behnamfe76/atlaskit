@@ -37,14 +37,14 @@ phases. The first milestone implements only `@atlaskit/vue`.
 **Purpose**: Establish the workspace/package structure for adapters and reserve
 future package locations.
 
-- [X] T001 Create `packages/vue`, `packages/adapter-contracts`, `packages/adapter-testing`, `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid` directories per `specs/002-framework-adapters/plan.md`
-- [X] T002 Configure `packages/vue/package.json`, `packages/vue/tsconfig.json`, and `packages/vue/README.md` for `@atlaskit/vue` with `@atlaskit/core` workspace dependency, Vue peer dependency, TailwindCSS peer/dev dependency notes, build scripts, test scripts, and exports
-- [X] T003 [P] Configure `packages/adapter-contracts/package.json`, `packages/adapter-contracts/tsconfig.json`, and `packages/adapter-contracts/README.md` for shared runtime contracts in `packages/adapter-contracts/`
-- [X] T004 [P] Configure `packages/adapter-testing/package.json`, `packages/adapter-testing/tsconfig.json`, and `packages/adapter-testing/README.md` for shared adapter behavior tests in `packages/adapter-testing/`
-- [X] T005 [P] Add placeholder `package.json`, `tsconfig.json`, `README.md`, and `src/index.ts` files for `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid`
-- [X] T006 Configure `packages/vue/src/index.ts`, `packages/adapter-contracts/src/index.ts`, and `packages/adapter-testing/src/index.ts` as initial public entrypoints
-- [X] T007 [P] Add Vue package test setup files in `packages/vue/vitest.config.ts` and `packages/vue/tests/setup.ts`
-- [X] T008 [P] Add shared adapter testing harness setup in `packages/adapter-testing/vitest.config.ts` and `packages/adapter-testing/tests/setup.ts`
+- [x] T001 Create `packages/vue`, `packages/adapter-contracts`, `packages/adapter-testing`, `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid` directories per `specs/002-framework-adapters/plan.md`
+- [x] T002 Configure `packages/vue/package.json`, `packages/vue/tsconfig.json`, and `packages/vue/README.md` for `@atlaskit/vue` with `@atlaskit/core` workspace dependency, Vue peer dependency, TailwindCSS peer/dev dependency notes, build scripts, test scripts, and exports
+- [x] T003 [P] Configure `packages/adapter-contracts/package.json`, `packages/adapter-contracts/tsconfig.json`, and `packages/adapter-contracts/README.md` for shared runtime contracts in `packages/adapter-contracts/`
+- [x] T004 [P] Configure `packages/adapter-testing/package.json`, `packages/adapter-testing/tsconfig.json`, and `packages/adapter-testing/README.md` for shared adapter behavior tests in `packages/adapter-testing/`
+- [x] T005 [P] Add placeholder `package.json`, `tsconfig.json`, `README.md`, and `src/index.ts` files for `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid`
+- [x] T006 Configure `packages/vue/src/index.ts`, `packages/adapter-contracts/src/index.ts`, and `packages/adapter-testing/src/index.ts` as initial public entrypoints
+- [x] T007 [P] Add Vue package test setup files in `packages/vue/vitest.config.ts` and `packages/vue/tests/setup.ts`
+- [x] T008 [P] Add shared adapter testing harness setup in `packages/adapter-testing/vitest.config.ts` and `packages/adapter-testing/tests/setup.ts`
 
 ---
 
@@ -55,14 +55,14 @@ all Vue adapter behavior.
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [X] T009 Define resource reference types and normalization helpers in `packages/adapter-contracts/src/resources/resourceReference.ts` and `packages/adapter-contracts/src/resources/resolveResourceReference.ts`
-- [X] T010 [P] Define shared component prop types, slot prop types, and execution-context types in `packages/adapter-contracts/src/state/componentProps.ts` and `packages/adapter-contracts/src/state/slotProps.ts`
-- [X] T011 [P] Define shared class-map and theme-token schemas in `packages/adapter-contracts/src/theme/classMap.ts` and `packages/adapter-contracts/src/theme/themeTokens.ts`
-- [X] T012 [P] Define shared table/form/show/action state contracts in `packages/adapter-contracts/src/state/tableState.ts`, `packages/adapter-contracts/src/state/formState.ts`, `packages/adapter-contracts/src/state/showState.ts`, and `packages/adapter-contracts/src/state/actionState.ts`
-- [X] T013 [P] Define shared authorization rendering helpers for hidden versus disabled states in `packages/adapter-contracts/src/authorization/renderAuthorization.ts`
-- [X] T014 Implement default Tailwind class maps, theme-token merging, and class-map override helpers in `packages/vue/src/theme/defaultClasses.ts`, `packages/vue/src/theme/themeTokens.ts`, `packages/vue/src/theme/createClassMap.ts`, and `packages/vue/src/composables/useAtlasTheme.ts`
-- [X] T015 [P] Add shared adapter behavior fixtures and scenario helpers in `packages/adapter-testing/src/fixtures/adapterFixtures.ts` and `packages/adapter-testing/src/scenarios/behaviorScenarios.ts`
-- [X] T016 [P] Add foundational tests for resource normalization, state contracts, authorization rendering, and class merging in `packages/adapter-contracts/tests/contracts.test.ts`, `packages/vue/tests/theme/useAtlasTheme.test.ts`, and `packages/adapter-testing/tests/behavior-fixtures.test.ts`
+- [x] T009 Define resource reference types and normalization helpers in `packages/adapter-contracts/src/resources/resourceReference.ts` and `packages/adapter-contracts/src/resources/resolveResourceReference.ts`
+- [x] T010 [P] Define shared component prop types, slot prop types, and execution-context types in `packages/adapter-contracts/src/state/componentProps.ts` and `packages/adapter-contracts/src/state/slotProps.ts`
+- [x] T011 [P] Define shared class-map and theme-token schemas in `packages/adapter-contracts/src/theme/classMap.ts` and `packages/adapter-contracts/src/theme/themeTokens.ts`
+- [x] T012 [P] Define shared table/form/show/action state contracts in `packages/adapter-contracts/src/state/tableState.ts`, `packages/adapter-contracts/src/state/formState.ts`, `packages/adapter-contracts/src/state/showState.ts`, and `packages/adapter-contracts/src/state/actionState.ts`
+- [x] T013 [P] Define shared authorization rendering helpers for hidden versus disabled states in `packages/adapter-contracts/src/authorization/renderAuthorization.ts`
+- [x] T014 Implement default Tailwind class maps, theme-token merging, and class-map override helpers in `packages/vue/src/theme/defaultClasses.ts`, `packages/vue/src/theme/themeTokens.ts`, `packages/vue/src/theme/createClassMap.ts`, and `packages/vue/src/composables/useAtlasTheme.ts`
+- [x] T015 [P] Add shared adapter behavior fixtures and scenario helpers in `packages/adapter-testing/src/fixtures/adapterFixtures.ts` and `packages/adapter-testing/src/scenarios/behaviorScenarios.ts`
+- [x] T016 [P] Add foundational tests for resource normalization, state contracts, authorization rendering, and class merging in `packages/adapter-contracts/tests/contracts.test.ts`, `packages/vue/tests/theme/useAtlasTheme.test.ts`, and `packages/adapter-testing/tests/behavior-fixtures.test.ts`
 
 **Checkpoint**: Shared adapter contract and theme/state foundation ready - user story implementation can now begin in parallel
 
@@ -84,16 +84,16 @@ duplication.
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
 - [ ] T017 [P] [US1] Add shared behavior contract tests for resource resolution, controlled/uncontrolled table state, explicit form mode, and authorization rendering in `packages/adapter-testing/tests/resource-resolution.contract.test.ts`, `packages/adapter-testing/tests/table-state.contract.test.ts`, `packages/adapter-testing/tests/form-mode.contract.test.ts`, and `packages/adapter-testing/tests/authorization-rendering.contract.test.ts`
-- [ ] T018 [P] [US1] Add Vue composable tests for `useAtlasResource`, `useResourceTable`, `useResourceForm`, `useResourceShow`, `useFieldRenderer`, and `useActionRunner` in `packages/vue/tests/composables/useAtlasResource.test.ts`, `packages/vue/tests/composables/useResourceTable.test.ts`, `packages/vue/tests/composables/useResourceForm.test.ts`, `packages/vue/tests/composables/useResourceShow.test.ts`, `packages/vue/tests/composables/useFieldRenderer.test.ts`, and `packages/vue/tests/composables/useActionRunner.test.ts`
+- [x] T018 [P] [US1] Add Vue composable tests for `useAtlasResource`, `useResourceTable`, `useResourceForm`, `useResourceShow`, `useFieldRenderer`, and `useActionRunner` in `packages/vue/tests/composables/useAtlasResource.test.ts`, `packages/vue/tests/composables/useResourceTable.test.ts`, `packages/vue/tests/composables/useResourceForm.test.ts`, `packages/vue/tests/composables/useResourceShow.test.ts`, `packages/vue/tests/composables/useFieldRenderer.test.ts`, and `packages/vue/tests/composables/useActionRunner.test.ts`
 - [ ] T019 [P] [US1] Add Vue component tests for `AtlasResourceTable`, `AtlasResourceForm`, `AtlasResourceShow`, `AtlasFieldRenderer`, and `AtlasActionRunner`, including `BelongsTo` and `BelongsToMany` behavior, in `packages/vue/tests/components/AtlasResourceTable.test.ts`, `packages/vue/tests/components/AtlasResourceForm.test.ts`, `packages/vue/tests/components/AtlasResourceShow.test.ts`, `packages/vue/tests/components/AtlasFieldRenderer.test.ts`, and `packages/vue/tests/components/AtlasActionRunner.test.ts`
 
 ### Implementation for User Story 1
 
-- [ ] T020 [P] [US1] Implement `useAtlasResource` and `useResourceShow` in `packages/vue/src/composables/useAtlasResource.ts` and `packages/vue/src/composables/useResourceShow.ts`
-- [ ] T021 [P] [US1] Implement `useResourceTable` with controlled/uncontrolled state and `QueryClient.subscribe()` binding in `packages/vue/src/composables/useResourceTable.ts`
-- [ ] T022 [P] [US1] Implement `useResourceForm` with explicit `create`/`edit` mode, validation state, submission state, and dependency recalculation in `packages/vue/src/composables/useResourceForm.ts`
-- [ ] T023 [P] [US1] Implement `useFieldRenderer` and `useActionRunner` in `packages/vue/src/composables/useFieldRenderer.ts` and `packages/vue/src/composables/useActionRunner.ts`
-- [ ] T024 [US1] Implement `AtlasFieldRenderer.vue` with index/show/create/edit modes, visibility handling, validation error display, sync/async dependency support, typed slots, and explicit `BelongsTo`/`BelongsToMany` handling in `packages/vue/src/components/AtlasFieldRenderer.vue`
+- [x] T020 [P] [US1] Implement `useAtlasResource` and `useResourceShow` in `packages/vue/src/composables/useAtlasResource.ts` and `packages/vue/src/composables/useResourceShow.ts`
+- [x] T021 [P] [US1] Implement `useResourceTable` with controlled/uncontrolled state and `QueryClient.subscribe()` binding in `packages/vue/src/composables/useResourceTable.ts`
+- [x] T022 [P] [US1] Implement `useResourceForm` with explicit `create`/`edit` mode, validation state, submission state, and dependency recalculation in `packages/vue/src/composables/useResourceForm.ts`
+- [x] T023 [P] [US1] Implement `useFieldRenderer` and `useActionRunner` in `packages/vue/src/composables/useFieldRenderer.ts` and `packages/vue/src/composables/useActionRunner.ts`
+- [x] T024 [US1] Implement `AtlasFieldRenderer.vue` with index/show/create/edit modes, visibility handling, validation error display, sync/async dependency support, typed slots, and explicit `BelongsTo`/`BelongsToMany` handling in `packages/vue/src/components/AtlasFieldRenderer.vue`
 - [ ] T025 [US1] Implement `AtlasActionRunner.vue` with resource and row action contexts, loading/error/success states, class maps, and slots in `packages/vue/src/components/AtlasActionRunner.vue`
 - [ ] T026 [US1] Implement `AtlasResourceTable.vue` with loading/error/empty states, search, sorting, filtering, pagination, selected rows, index field visibility, actions, slots, class maps, and relation-field display behavior in `packages/vue/src/components/AtlasResourceTable.vue`
 - [ ] T027 [US1] Implement `AtlasResourceForm.vue` with create/edit modes, form field visibility, validation, submission, field dependencies, async option loading, slots, class maps, and relation-field input behavior in `packages/vue/src/components/AtlasResourceForm.vue`
@@ -115,15 +115,15 @@ authorization, dependency, and action behavior.
 
 ### Tests for User Story 2 (REQUIRED when public behavior changes) ⚠️
 
-- [ ] T030 [P] [US2] Add Vue tests for class-map merges, theme-token overrides, and slot-based field/action customization in `packages/vue/tests/theme/classMapOverrides.test.ts`, `packages/vue/tests/theme/themeTokenOverrides.test.ts`, and `packages/vue/tests/components/slot-customization.test.ts`
-- [ ] T031 [P] [US2] Add shared behavior tests for styling/customization invariants in `packages/adapter-testing/tests/styling-customization.contract.test.ts`
+- [x] T030 [P] [US2] Add Vue tests for class-map merges, theme-token overrides, and slot-based field/action customization in `packages/vue/tests/theme/classMapOverrides.test.ts`, `packages/vue/tests/theme/themeTokenOverrides.test.ts`, and `packages/vue/tests/components/slot-customization.test.ts`
+- [x] T031 [P] [US2] Add shared behavior tests for styling/customization invariants in `packages/adapter-testing/tests/styling-customization.contract.test.ts`
 
 ### Implementation for User Story 2
 
-- [ ] T032 [P] [US2] Refine component prop and slot prop exports for customization surfaces in `packages/vue/src/contracts/componentProps.ts`, `packages/vue/src/contracts/slotProps.ts`, and `packages/vue/src/contracts/classMapTypes.ts`
-- [ ] T033 [US2] Integrate class-map and theme-token overrides across `AtlasResourceTable.vue`, `AtlasResourceForm.vue`, `AtlasResourceShow.vue`, `AtlasFieldRenderer.vue`, and `AtlasActionRunner.vue` in `packages/vue/src/components/`
-- [ ] T034 [US2] Implement full field and action slot override paths backed by typed slot props in `packages/vue/src/components/AtlasFieldRenderer.vue`, `packages/vue/src/components/AtlasActionRunner.vue`, `packages/vue/src/components/AtlasResourceTable.vue`, `packages/vue/src/components/AtlasResourceForm.vue`, and `packages/vue/src/components/AtlasResourceShow.vue`
-- [ ] T035 [US2] Document customization-focused public exports in `packages/vue/README.md` and `specs/002-framework-adapters/contracts/atlas-vue-components.md`
+- [x] T032 [P] [US2] Refine component prop and slot prop exports for customization surfaces in `packages/vue/src/contracts/componentProps.ts`, `packages/vue/src/contracts/slotProps.ts`, and `packages/vue/src/contracts/classMapTypes.ts`
+- [x] T033 [US2] Integrate class-map and theme-token overrides across `AtlasResourceTable.vue`, `AtlasResourceForm.vue`, `AtlasResourceShow.vue`, `AtlasFieldRenderer.vue`, and `AtlasActionRunner.vue` in `packages/vue/src/components/`
+- [x] T034 [US2] Implement full field and action slot override paths backed by typed slot props in `packages/vue/src/components/AtlasFieldRenderer.vue`, `packages/vue/src/components/AtlasActionRunner.vue`, `packages/vue/src/components/AtlasResourceTable.vue`, `packages/vue/src/components/AtlasResourceForm.vue`, and `packages/vue/src/components/AtlasResourceShow.vue`
+- [x] T035 [US2] Document customization-focused public exports in `packages/vue/README.md` and `specs/002-framework-adapters/contracts/atlas-vue-components.md`
 
 **Checkpoint**: At this point, User Stories 1 AND 2 should both work independently
 
@@ -141,14 +141,14 @@ to the same contract.
 
 ### Tests for User Story 3 (REQUIRED when public behavior changes) ⚠️
 
-- [ ] T036 [P] [US3] Add shared behavior tests for action execution, async dependencies, and future-adapter parity expectations in `packages/adapter-testing/tests/action-execution.contract.test.ts`, `packages/adapter-testing/tests/async-dependencies.contract.test.ts`, and `packages/adapter-testing/tests/future-adapter-parity.contract.test.ts`
-- [ ] T037 [P] [US3] Add shared behavior tests for `BelongsTo` and `BelongsToMany` parity across field, table, form, and show surfaces in `packages/adapter-testing/tests/relationship-fields.contract.test.ts` and `packages/vue/tests/components/relationship-fields.test.ts`
+- [x] T036 [P] [US3] Add shared behavior tests for action execution, async dependencies, and future-adapter parity expectations in `packages/adapter-testing/tests/action-execution.contract.test.ts`, `packages/adapter-testing/tests/async-dependencies.contract.test.ts`, and `packages/adapter-testing/tests/future-adapter-parity.contract.test.ts`
+- [x] T037 [P] [US3] Add shared behavior tests for `BelongsTo` and `BelongsToMany` parity across field, table, form, and show surfaces in `packages/adapter-testing/tests/relationship-fields.contract.test.ts` and `packages/vue/tests/components/relationship-fields.test.ts`
 
 ### Implementation for User Story 3
 
-- [ ] T038 [P] [US3] Expand shared adapter behavior fixtures and scenarios for Vue parity reuse in `packages/adapter-testing/src/fixtures/vueAdapterFixtures.ts` and `packages/adapter-testing/src/scenarios/vueReferenceScenarios.ts`
-- [ ] T039 [US3] Add future adapter blueprint documentation to `packages/dom/README.md`, `packages/react/README.md`, `packages/angular/README.md`, `packages/svelte/README.md`, `packages/solid/README.md`, and `specs/002-framework-adapters/contracts/adapter-behavior-contracts.md`
-- [ ] T040 [US3] Align placeholder package entrypoints and metadata with the Vue behavior contract in `packages/dom/src/index.ts`, `packages/react/src/index.ts`, `packages/angular/src/index.ts`, `packages/svelte/src/index.ts`, and `packages/solid/src/index.ts`
+- [x] T038 [P] [US3] Expand shared adapter behavior fixtures and scenarios for Vue parity reuse in `packages/adapter-testing/src/fixtures/vueAdapterFixtures.ts` and `packages/adapter-testing/src/scenarios/vueReferenceScenarios.ts`
+- [x] T039 [US3] Add future adapter blueprint documentation to `packages/dom/README.md`, `packages/react/README.md`, `packages/angular/README.md`, `packages/svelte/README.md`, `packages/solid/README.md`, and `specs/002-framework-adapters/contracts/adapter-behavior-contracts.md`
+- [x] T040 [US3] Align placeholder package entrypoints and metadata with the Vue behavior contract in `packages/dom/src/index.ts`, `packages/react/src/index.ts`, `packages/angular/src/index.ts`, `packages/svelte/src/index.ts`, and `packages/solid/src/index.ts`
 
 **Checkpoint**: All user stories should now be independently functional
 

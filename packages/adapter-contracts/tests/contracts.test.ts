@@ -14,7 +14,13 @@ class ProductResourceClass {
 describe("adapter contracts", () => {
   it("normalizes class values", () => {
     expect(
-      normalizeClassValue("rounded", ["border", "px-4"], undefined, false, "py-2")
+      normalizeClassValue(
+        "rounded",
+        ["border", "px-4"],
+        undefined,
+        false,
+        "py-2"
+      )
     ).toBe("rounded border px-4 py-2");
   });
 
@@ -31,13 +37,18 @@ describe("adapter contracts", () => {
       kind: "uriKey",
       resourceClass: ProductResourceClass
     });
-    expect(resolveResourceReference(ProductResourceClass, resolver)).toMatchObject({
+    expect(
+      resolveResourceReference(ProductResourceClass, resolver)
+    ).toMatchObject({
       identifier: "products",
       kind: "class",
       resourceClass: ProductResourceClass
     });
     expect(
-      resolveResourceReference(new (ProductResourceClass as unknown as new () => object)(), resolver)
+      resolveResourceReference(
+        new (ProductResourceClass as unknown as new () => object)(),
+        resolver
+      )
     ).toMatchObject({
       identifier: "products",
       kind: "instance",
@@ -46,7 +57,9 @@ describe("adapter contracts", () => {
   });
 
   it("maps visibility and executability to render states", () => {
-    expect(renderAuthorization({ executable: true, visible: true })).toBe("active");
+    expect(renderAuthorization({ executable: true, visible: true })).toBe(
+      "active"
+    );
     expect(renderAuthorization({ executable: false, visible: true })).toBe(
       "disabled"
     );

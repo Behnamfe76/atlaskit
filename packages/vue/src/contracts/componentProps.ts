@@ -1,3 +1,4 @@
+import type { Field } from "@atlaskit/core";
 import type {
   ActionExecutionState,
   ClassMap,
@@ -22,6 +23,7 @@ export interface ResourceTableProps extends BaseAdapterProps {
 export interface ResourceFormProps extends BaseAdapterProps {
   readonly initialValues?: Record<string, unknown>;
   readonly mode: "create" | "edit";
+  readonly record?: Record<string, unknown>;
   readonly recordId?: string | number;
 }
 
@@ -32,10 +34,12 @@ export interface ResourceShowProps extends BaseAdapterProps {
 }
 
 export interface FieldRendererProps {
+  readonly classMap?: ClassMap;
   readonly errors?: readonly string[];
-  readonly field: Record<string, unknown>;
+  readonly field: Field;
   readonly mode: "index" | "show" | "create" | "edit";
   readonly state?: Partial<FormState>;
+  readonly theme?: ThemeTokens;
   readonly value?: unknown;
 }
 

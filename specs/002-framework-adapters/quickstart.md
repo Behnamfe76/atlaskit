@@ -79,15 +79,9 @@ const productResource = "products";
 <template>
   <AtlasResourceTable :resource="productResource" />
 
-  <AtlasResourceForm
-    :resource="productResource"
-    mode="create"
-  />
+  <AtlasResourceForm :resource="productResource" mode="create" />
 
-  <AtlasResourceShow
-    :resource="productResource"
-    :resource-id="1"
-  />
+  <AtlasResourceShow :resource="productResource" :resource-id="1" />
 </template>
 ```
 
