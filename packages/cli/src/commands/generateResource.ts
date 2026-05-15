@@ -17,8 +17,8 @@ export async function generateResource(
   const cwd = options.cwd ?? process.cwd();
   const targetDirectory = options.targetDir ?? join(cwd, "resources");
   const targetPath = join(targetDirectory, template.fileName);
+  const writeOptions =
+    options.force === undefined ? {} : { force: options.force };
 
-  return writeGeneratedFile(targetPath, template.contents, {
-    force: options.force
-  });
+  return writeGeneratedFile(targetPath, template.contents, writeOptions);
 }

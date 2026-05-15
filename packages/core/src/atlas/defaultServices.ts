@@ -20,6 +20,7 @@ import {
   Textarea,
   Video
 } from "../fields";
+import type { Field } from "../fields/Field";
 import { I18n } from "../i18n/I18n";
 import { arLocale } from "../i18n/locales/ar";
 import { enLocale } from "../i18n/locales/en";
@@ -31,7 +32,7 @@ import { ValidationRegistry } from "../registries/ValidationRegistry";
 
 function fieldDefinition(FieldClass: {
   fieldType: string;
-  make(label: string, attribute?: string): unknown;
+  make(label: string, attribute?: string): Field;
   name: string;
 }) {
   return {

@@ -4,11 +4,17 @@ export class EventBus {
   readonly #listeners = new Map<string, Set<EventHandler>>();
 
   emit<TPayload>(type: string, payload?: TPayload): void {
-    const event: AtlasEvent<TPayload> = {
-      payload,
-      timestamp: Date.now(),
-      type
-    };
+    const event: AtlasEvent<TPayload> =
+      payload === undefined
+        ? {
+            timestamp: Date.now(),
+            type
+          }
+        : {
+            payload,
+            timestamp: Date.now(),
+            type
+          };
 
     for (const handler of this.#listeners.get(type) ?? []) {
       handler(event);

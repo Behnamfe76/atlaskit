@@ -148,12 +148,14 @@ description: "Task list for AtlasKit Core Engine implementation"
 
 **Purpose**: Final documentation, verification, and release-readiness work spanning all stories
 
-- [ ] T059 [P] Add root product documentation in `README.md`
-- [ ] T060 [P] Add package usage documentation in `packages/core/README.md`, `packages/cli/README.md`, and `packages/testing/README.md`
-- [ ] T061 [P] Add an initial release changeset in `.changeset/atlaskit-core-engine.md`
-- [ ] T062 Harmonize public exports and package entrypoints in `packages/core/src/index.ts`, `packages/cli/src/index.ts`, and `packages/testing/src/index.ts`
-- [ ] T063 Validate and update manual verification steps in `specs/001-atlaskit-core/quickstart.md`
-- [ ] T064 Run full workspace verification and record any required follow-up in `specs/001-atlaskit-core/tasks.md`
+- [x] T059 [P] Add root product documentation in `README.md`
+- [x] T060 [P] Add package usage documentation in `packages/core/README.md`, `packages/cli/README.md`, and `packages/testing/README.md`
+- [x] T061 [P] Add an initial release changeset in `.changeset/atlaskit-core-engine.md`
+- [x] T062 Harmonize public exports and package entrypoints in `packages/core/src/index.ts`, `packages/cli/src/index.ts`, and `packages/testing/src/index.ts`
+- [x] T063 Validate and update manual verification steps in `specs/001-atlaskit-core/quickstart.md`
+- [x] T064 Run full workspace verification and record any required follow-up in `specs/001-atlaskit-core/tasks.md`
+
+Verification note: `pnpm format`, `pnpm lint`, `pnpm test`, `pnpm build`, and `pnpm changeset status` all passed on 2026-05-15. No additional follow-up was required for Phase 6.
 
 ---
 

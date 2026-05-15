@@ -5,6 +5,7 @@ import type { RuleInput } from "../validation/ruleTypes";
 import type {
   FieldDefinition,
   FieldDependency,
+  FieldDependencyValues,
   FieldPage,
   FieldVisibility
 } from "./fieldTypes";
@@ -35,7 +36,7 @@ export class Field implements FieldDefinition {
   filterable = false;
   rules = [] as FieldDefinition["rules"];
   visibility = createDefaultVisibility();
-  dependencies = [] as FieldDependency<this>[];
+  dependencies = [] as FieldDependency<Field>[];
   displayMeta: PlainObject = {};
   serializationMeta: PlainObject = {};
   defaultValue?: unknown;
@@ -55,7 +56,7 @@ export class Field implements FieldDefinition {
       this
     );
     cloned.visibility = { ...this.visibility };
-    cloned.dependencies = [...this.dependencies] as FieldDependency<this>[];
+    cloned.dependencies = [...this.dependencies];
     cloned.displayMeta = { ...this.displayMeta };
     cloned.serializationMeta = { ...this.serializationMeta };
     cloned.rules = [...this.rules];
@@ -69,9 +70,18 @@ export class Field implements FieldDefinition {
 
   dependsOn(
     attribute: string,
-    callback: FieldDependency<this>["callback"]
+    callback: (
+      field: this,
+      values: FieldDependencyValues
+    ) => void | Promise<void>
   ): this {
-    this.dependencies = [...this.dependencies, { attribute, callback }];
+    this.dependencies = [
+      ...this.dependencies,
+      {
+        attribute,
+        callback: (field, values) => callback(field as this, values)
+      }
+    ];
     return this;
   }
 

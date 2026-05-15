@@ -5,10 +5,10 @@ import {
   Plugin,
   PluginRegistry,
   Rule,
-  ValidationRegistry,
   parseRules,
   validateFieldValue
 } from "../../../src";
+import type { ValidationRegistry } from "../../../src";
 
 class EvenRulePlugin extends Plugin {
   readonly name = "even-rule";

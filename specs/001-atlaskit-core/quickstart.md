@@ -30,6 +30,7 @@ inside one `pnpm` monorepo.
 
    ```bash
    pnpm lint
+   pnpm format
    pnpm test
    pnpm build
    ```
@@ -48,10 +49,13 @@ inside one `pnpm` monorepo.
    pnpm --filter @atlaskit/cli exec atlaskit generate resource Product
    ```
 
-3. Register the generated resource in the playground bootstrap using
+3. Confirm the generator writes `resources/ProductResource.ts` and that the
+   stub compiles against `@atlaskit/core`.
+
+4. Register the generated resource in the playground bootstrap using
    `Atlas.configure(...)`.
 
-4. Confirm manual scenarios:
+5. Confirm manual scenarios:
    - duplicate resource registration fails with a descriptive error
    - resolved page fields differ across index/detail/create/edit contexts
    - validation strings and typed rules normalize consistently
@@ -59,6 +63,7 @@ inside one `pnpm` monorepo.
    - English defaults plus sample `fa` and `ar` locale bundles change
      labels/formatting and respect RTL metadata
    - authorization deny precedence is reflected in resolved abilities
+   - plugin registration contributes a core capability without adapter coupling
    - optimistic query updates invalidate and reconcile correctly
 
 ## Packaging Verification
@@ -75,6 +80,12 @@ inside one `pnpm` monorepo.
 
    ```bash
    pnpm changeset status
+   ```
+
+3. Verify the generated resource smoke coverage remains green:
+
+   ```bash
+   pnpm vitest run examples/playground/tests/resource-generator-smoke.test.ts
    ```
 
 ## Scope Reminder

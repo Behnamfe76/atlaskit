@@ -1,5 +1,6 @@
 import type { PlainObject } from "../support/types";
 import type { NormalizedRule, RuleInput } from "../validation/ruleTypes";
+import type { Field } from "./Field";
 
 export type FieldPage = "index" | "detail" | "create" | "edit";
 
@@ -23,7 +24,7 @@ export interface FieldDependency<FieldInstance> {
 export interface FieldDefinition {
   readonly attribute: string;
   readonly defaultValue?: unknown;
-  readonly dependencies: readonly FieldDependency<unknown>[];
+  readonly dependencies: readonly FieldDependency<Field>[];
   readonly displayMeta: PlainObject;
   readonly filterable: boolean;
   readonly helpText?: string;

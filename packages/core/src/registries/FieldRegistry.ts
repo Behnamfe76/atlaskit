@@ -4,6 +4,10 @@ import type { Field } from "../fields/Field";
 import type { FieldTypeDefinition } from "../fields/fieldRegistryTypes";
 
 export class FieldRegistry extends BaseRegistry<string, FieldTypeDefinition> {
+  constructor() {
+    super("FieldRegistry");
+  }
+
   register<TField extends Field>(
     definition: FieldTypeDefinition<TField>
   ): this {

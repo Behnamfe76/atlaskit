@@ -4,5 +4,7 @@ export abstract class Plugin implements PluginDefinition {
   abstract readonly name: string;
   abstract readonly version: string;
 
-  register(_context: PluginContext): void {}
+  register(context: PluginContext): void {
+    void context;
+  }
 }

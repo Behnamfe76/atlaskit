@@ -1,14 +1,14 @@
 import { AuthorizationManager } from "../authorization/AuthorizationManager";
-import { QueryClient } from "../cache/QueryClient";
+import type { QueryClient } from "../cache/QueryClient";
 import { ServiceContainer } from "../container/ServiceContainer";
 import { createServiceToken } from "../container/serviceTokens";
-import { EventBus } from "../events/EventBus";
+import type { EventBus } from "../events/EventBus";
 import { I18n } from "../i18n/I18n";
-import { FieldRegistry } from "../registries/FieldRegistry";
-import { LocaleRegistry } from "../registries/LocaleRegistry";
-import { PluginRegistry } from "../registries/PluginRegistry";
+import type { FieldRegistry } from "../registries/FieldRegistry";
+import type { LocaleRegistry } from "../registries/LocaleRegistry";
+import type { PluginRegistry } from "../registries/PluginRegistry";
 import type { ResourceRegistry } from "../registries/ResourceRegistry";
-import { ValidationRegistry } from "../registries/ValidationRegistry";
+import type { ValidationRegistry } from "../registries/ValidationRegistry";
 import { createDefaultServices } from "./defaultServices";
 import { emitResourceResolved } from "./runtimeHooks";
 import { configurePlugins } from "./configurePlugins";
@@ -33,7 +33,7 @@ const authorizationToken = createServiceToken<AuthorizationManager>(
 const i18nToken = createServiceToken<I18n>("i18n");
 
 export class Atlas {
-  static #runtime?: AtlasRuntime;
+  static #runtime: AtlasRuntime | undefined = undefined;
 
   static configure(config: AtlasConfig): AtlasRuntime {
     const container = new ServiceContainer();

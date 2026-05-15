@@ -6,7 +6,8 @@ function normalizeStringRule(rule: string): readonly NormalizedRule[] {
     .map((segment) => segment.trim())
     .filter(Boolean)
     .map((segment) => {
-      const [name, serializedParameters] = segment.split(":");
+      const [rawName, serializedParameters] = segment.split(":");
+      const name = rawName ?? "";
       return {
         name,
         parameters: serializedParameters

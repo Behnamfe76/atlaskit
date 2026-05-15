@@ -1,6 +1,7 @@
 import type { Constructor } from "../support/types";
 
 import type { LifecycleHooks } from "./Hooks";
+import type { Resource } from "./Resource";
 
 export type PaginationMode =
   | "collection"

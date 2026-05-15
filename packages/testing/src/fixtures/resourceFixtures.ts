@@ -1,4 +1,4 @@
-import { Resource } from "../../../core/src/resources/Resource";
+import { Resource } from "@atlaskit/core";
 
 function toId(name: string): string {
   return name.trim().toLowerCase();
