@@ -68,6 +68,7 @@ Atlas.configure({
 ```vue
 <script setup lang="ts">
 import {
+  AtlasActionRunner,
   AtlasResourceForm,
   AtlasResourceShow,
   AtlasResourceTable
@@ -82,6 +83,11 @@ const productResource = "products";
   <AtlasResourceForm :resource="productResource" mode="create" />
 
   <AtlasResourceShow :resource="productResource" :resource-id="1" />
+
+  <AtlasActionRunner
+    :actions="[{ label: 'Sync', execute: async () => true }]"
+    :resource="productResource"
+  />
 </template>
 ```
 
@@ -92,14 +98,14 @@ const productResource = "products";
 import { AtlasResourceTable, createClassMap } from "@atlaskit/vue";
 
 const classMap = createClassMap({
-  table: {
+  resourceTable: {
     root: "rounded-lg border border-slate-200",
-    headerCell: "text-xs uppercase tracking-wide text-slate-500"
+    header: "text-xs uppercase tracking-wide text-slate-500"
   }
 });
 
 const theme = {
-  colors: {
+  color: {
     accent: "text-sky-600",
     danger: "text-rose-600"
   }
@@ -120,8 +126,16 @@ const theme = {
 ```vue
 <template>
   <AtlasResourceTable resource="products">
-    <template #cell.name="{ value }">
-      <strong class="font-semibold text-slate-900">{{ value }}</strong>
+    <template #cell="{ field, value }">
+      <strong
+        v-if="field.attribute === 'name'"
+        class="font-semibold text-slate-900"
+      >
+        {{ value }}
+      </strong>
+      <template v-else>
+        {{ value }}
+      </template>
     </template>
   </AtlasResourceTable>
 </template>

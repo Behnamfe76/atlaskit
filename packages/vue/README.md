@@ -45,3 +45,28 @@ applications customize presentation through:
 The public type exports include component props, slot props, and
 `VueClassMap` so presentation can change without forking validation,
 dependencies, authorization, or action execution semantics.
+
+## Usage
+
+```ts
+import { createApp, h } from "vue";
+import { Atlas, Resource, Text } from "@atlaskit/core";
+import { AtlasResourceTable } from "@atlaskit/vue";
+
+class ProductResource extends Resource {
+  static override id = "products";
+  static override uriKey = "products";
+
+  override fields() {
+    return [Text.make("Name", "name")];
+  }
+}
+
+Atlas.configure({
+  resources: [ProductResource]
+});
+
+createApp({
+  render: () => h(AtlasResourceTable, { resource: "products" })
+}).mount("#app");
+```

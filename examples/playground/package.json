@@ -9,6 +9,9 @@
     "lint": "eslint src tests"
   },
   "dependencies": {
-    "@atlaskit/core": "workspace:*"
+    "@atlaskit/adapter-contracts": "workspace:*",
+    "@atlaskit/core": "workspace:*",
+    "@atlaskit/vue": "workspace:*",
+    "vue": "^3.5.0"
   }
 }

@@ -67,4 +67,14 @@ describe("adapter contracts", () => {
       "hidden"
     );
   });
+
+  it("throws for unsupported resource references", () => {
+    expect(() =>
+      resolveResourceReference(42 as never, {
+        byUriKey() {
+          return ProductResourceClass;
+        }
+      })
+    ).toThrow("Unsupported resource reference.");
+  });
 });

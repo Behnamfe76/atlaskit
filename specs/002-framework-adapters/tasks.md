@@ -83,9 +83,9 @@ duplication.
 
 > **NOTE: Write these tests FIRST, ensure they FAIL before implementation**
 
-- [ ] T017 [P] [US1] Add shared behavior contract tests for resource resolution, controlled/uncontrolled table state, explicit form mode, and authorization rendering in `packages/adapter-testing/tests/resource-resolution.contract.test.ts`, `packages/adapter-testing/tests/table-state.contract.test.ts`, `packages/adapter-testing/tests/form-mode.contract.test.ts`, and `packages/adapter-testing/tests/authorization-rendering.contract.test.ts`
+- [x] T017 [P] [US1] Add shared behavior contract tests for resource resolution, controlled/uncontrolled table state, explicit form mode, and authorization rendering in `packages/adapter-testing/tests/resource-resolution.contract.test.ts`, `packages/adapter-testing/tests/table-state.contract.test.ts`, `packages/adapter-testing/tests/form-mode.contract.test.ts`, and `packages/adapter-testing/tests/authorization-rendering.contract.test.ts`
 - [x] T018 [P] [US1] Add Vue composable tests for `useAtlasResource`, `useResourceTable`, `useResourceForm`, `useResourceShow`, `useFieldRenderer`, and `useActionRunner` in `packages/vue/tests/composables/useAtlasResource.test.ts`, `packages/vue/tests/composables/useResourceTable.test.ts`, `packages/vue/tests/composables/useResourceForm.test.ts`, `packages/vue/tests/composables/useResourceShow.test.ts`, `packages/vue/tests/composables/useFieldRenderer.test.ts`, and `packages/vue/tests/composables/useActionRunner.test.ts`
-- [ ] T019 [P] [US1] Add Vue component tests for `AtlasResourceTable`, `AtlasResourceForm`, `AtlasResourceShow`, `AtlasFieldRenderer`, and `AtlasActionRunner`, including `BelongsTo` and `BelongsToMany` behavior, in `packages/vue/tests/components/AtlasResourceTable.test.ts`, `packages/vue/tests/components/AtlasResourceForm.test.ts`, `packages/vue/tests/components/AtlasResourceShow.test.ts`, `packages/vue/tests/components/AtlasFieldRenderer.test.ts`, and `packages/vue/tests/components/AtlasActionRunner.test.ts`
+- [x] T019 [P] [US1] Add Vue component tests for `AtlasResourceTable`, `AtlasResourceForm`, `AtlasResourceShow`, `AtlasFieldRenderer`, and `AtlasActionRunner`, including `BelongsTo` and `BelongsToMany` behavior, in `packages/vue/tests/components/AtlasResourceTable.test.ts`, `packages/vue/tests/components/AtlasResourceForm.test.ts`, `packages/vue/tests/components/AtlasResourceShow.test.ts`, `packages/vue/tests/components/AtlasFieldRenderer.test.ts`, and `packages/vue/tests/components/AtlasActionRunner.test.ts`
 
 ### Implementation for User Story 1
 
@@ -94,11 +94,11 @@ duplication.
 - [x] T022 [P] [US1] Implement `useResourceForm` with explicit `create`/`edit` mode, validation state, submission state, and dependency recalculation in `packages/vue/src/composables/useResourceForm.ts`
 - [x] T023 [P] [US1] Implement `useFieldRenderer` and `useActionRunner` in `packages/vue/src/composables/useFieldRenderer.ts` and `packages/vue/src/composables/useActionRunner.ts`
 - [x] T024 [US1] Implement `AtlasFieldRenderer.vue` with index/show/create/edit modes, visibility handling, validation error display, sync/async dependency support, typed slots, and explicit `BelongsTo`/`BelongsToMany` handling in `packages/vue/src/components/AtlasFieldRenderer.vue`
-- [ ] T025 [US1] Implement `AtlasActionRunner.vue` with resource and row action contexts, loading/error/success states, class maps, and slots in `packages/vue/src/components/AtlasActionRunner.vue`
-- [ ] T026 [US1] Implement `AtlasResourceTable.vue` with loading/error/empty states, search, sorting, filtering, pagination, selected rows, index field visibility, actions, slots, class maps, and relation-field display behavior in `packages/vue/src/components/AtlasResourceTable.vue`
-- [ ] T027 [US1] Implement `AtlasResourceForm.vue` with create/edit modes, form field visibility, validation, submission, field dependencies, async option loading, slots, class maps, and relation-field input behavior in `packages/vue/src/components/AtlasResourceForm.vue`
-- [ ] T028 [US1] Implement `AtlasResourceShow.vue` with show field visibility, relation display metadata, actions, slots, class maps, and explicit `BelongsTo`/`BelongsToMany` output behavior in `packages/vue/src/components/AtlasResourceShow.vue`
-- [ ] T029 [US1] Export all public Vue adapter APIs and contracts from `packages/vue/src/index.ts` and `packages/vue/src/contracts/index.ts`
+- [x] T025 [US1] Implement `AtlasActionRunner.vue` with resource and row action contexts, loading/error/success states, class maps, and slots in `packages/vue/src/components/AtlasActionRunner.vue`
+- [x] T026 [US1] Implement `AtlasResourceTable.vue` with loading/error/empty states, search, sorting, filtering, pagination, selected rows, index field visibility, actions, slots, class maps, and relation-field display behavior in `packages/vue/src/components/AtlasResourceTable.vue`
+- [x] T027 [US1] Implement `AtlasResourceForm.vue` with create/edit modes, form field visibility, validation, submission, field dependencies, async option loading, slots, class maps, and relation-field input behavior in `packages/vue/src/components/AtlasResourceForm.vue`
+- [x] T028 [US1] Implement `AtlasResourceShow.vue` with show field visibility, relation display metadata, actions, slots, class maps, and explicit `BelongsTo`/`BelongsToMany` output behavior in `packages/vue/src/components/AtlasResourceShow.vue`
+- [x] T029 [US1] Export all public Vue adapter APIs and contracts from `packages/vue/src/index.ts` and `packages/vue/src/contracts/index.ts`
 
 **Checkpoint**: At this point, User Story 1 should be fully functional and testable independently
 
@@ -159,10 +159,10 @@ to the same contract.
 **Purpose**: Finalize examples, docs, and integration validation that span
 multiple user stories
 
-- [ ] T041 [P] Add Vue playground/example wiring in `examples/playground/src/bootstrap.ts`, `examples/playground/src/app.ts`, and `examples/playground/src/main.ts`
-- [ ] T042 Add usage documentation for `@atlaskit/vue`, `@atlaskit/adapter-contracts`, and `@atlaskit/adapter-testing` in `README.md`, `packages/vue/README.md`, `packages/adapter-contracts/README.md`, and `packages/adapter-testing/README.md`
-- [ ] T043 [P] Add additional unit tests required by changed behavior in `packages/vue/tests/` and `packages/adapter-contracts/tests/`
-- [ ] T044 Run quickstart validation against `specs/002-framework-adapters/quickstart.md` and align any drift in `examples/playground/` or package README files
+- [x] T041 [P] Add Vue playground/example wiring in `examples/playground/src/bootstrap.ts`, `examples/playground/src/app.ts`, and `examples/playground/src/main.ts`
+- [x] T042 Add usage documentation for `@atlaskit/vue`, `@atlaskit/adapter-contracts`, and `@atlaskit/adapter-testing` in `README.md`, `packages/vue/README.md`, `packages/adapter-contracts/README.md`, and `packages/adapter-testing/README.md`
+- [x] T043 [P] Add additional unit tests required by changed behavior in `packages/vue/tests/` and `packages/adapter-contracts/tests/`
+- [x] T044 Run quickstart validation against `specs/002-framework-adapters/quickstart.md` and align any drift in `examples/playground/` or package README files
 
 ---
 
