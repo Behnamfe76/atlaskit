@@ -42,6 +42,11 @@ _GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 
 - `@atlaskit/core` boundary: confirm no framework-specific rendering code or UI
   responsibilities are introduced into core.
+- Adapter package boundary: if adapters are in scope, confirm they depend on
+  `@atlaskit/core` via workspace dependencies, do not duplicate core logic, and
+  stay limited to rendering, framework-native state binding, component APIs,
+  slots/render props, class customization, and integration with core state and
+  query services.
 - Public API typing: list every exported contract that changes and how strong
   TypeScript typing and API documentation will be preserved.
 - Domain ownership: identify which core concerns are affected
@@ -52,8 +57,17 @@ _GATE: Must pass before Phase 0 research. Re-check after Phase 1 design._
 - Extensibility and normalization: specify required registry changes, plugin
   impacts, and how REST/GraphQL payloads will be normalized into internal
   shapes.
+- Adapter behavior contract: if adapter work is in scope, identify how
+  `AtlasResourceTable`, `AtlasResourceForm`, `AtlasResourceShow`,
+  `AtlasFieldRenderer`, and `AtlasActionRunner` will be delivered, how smaller
+  primitives are factored, which framework-native customization pattern is
+  used, and how Vue parity or DOM mount behavior is preserved.
+- Routing and pages: confirm the feature does not introduce router bindings,
+  page abstractions, or framework page components into any adapter package.
 - Verification: enumerate the automated tests required for changed public APIs
-  and changed subsystems. Plans that omit test work fail this gate.
+  and changed subsystems. Adapter plans MUST also enumerate shared behavior
+  contract tests and styling customization coverage. Plans that omit test work
+  fail this gate.
 
 ## Project Structure
 

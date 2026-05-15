@@ -44,4 +44,6 @@ runtime.resolveResource("products");
 ## Scope
 
 This package does not include rendering adapters. UI packages should consume
-its contracts instead of moving engine logic out of core.
+its contracts through workspace dependencies instead of moving engine logic out
+of core. Adapter packages are limited to rendering and framework-native
+integration surfaces and must not add routing or page abstractions.

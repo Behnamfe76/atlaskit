@@ -110,8 +110,21 @@ _Example of marking unclear requirements:_
   pagination normalization, plugins, and registries.]
 - **Normalization/Plugin Impact**: [Describe whether response normalization,
   registry behavior, or plugin registration contracts change.]
+- **Adapter Rendering Scope**: [If adapter work is in scope, confirm the
+  adapter stays limited to rendering, framework-native state binding, component
+  APIs, slots/render props, class customization, and integration with core
+  state/query services. Confirm routing and pages are excluded.]
+- **Adapter Contract Surface**: [If adapter work is in scope, list which of
+  `AtlasResourceTable`, `AtlasResourceForm`, `AtlasResourceShow`,
+  `AtlasFieldRenderer`, and `AtlasActionRunner` are added or changed, how they
+  compose smaller primitives, and how Vue reference behavior or DOM mount APIs
+  are preserved.]
+- **Styling/Customization**: [If adapter work is in scope, describe TailwindCSS
+  usage plus support for default classes, class maps, theme tokens, and
+  framework-native customization patterns.]
 - **Verification Scope**: [List the automated tests required for public APIs and
-  affected subsystems.]
+  affected subsystems, including shared adapter behavior contract coverage when
+  applicable.]
 
 ### Key Entities _(include if feature involves data)_
 

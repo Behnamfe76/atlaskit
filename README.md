@@ -50,5 +50,9 @@ pnpm --filter @atlaskit/cli exec atlaskit generate resource Product
 ## Constraints
 
 - `@atlaskit/core` stays UI-agnostic and does not render
-- framework adapters are intentionally out of scope for this release
+- framework adapters depend on `@atlaskit/core` and must not duplicate core logic
+- adapters are limited to reusable rendering surfaces, framework-native state binding,
+  component APIs, slots/render props, class customization, and core service integration
+- adapters do not include routing integrations or page abstractions
+- adapter styling uses TailwindCSS utilities plus class maps and theme-token customization
 - the playground is for manual verification only
