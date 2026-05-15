@@ -37,14 +37,14 @@ phases. The first milestone implements only `@atlaskit/vue`.
 **Purpose**: Establish the workspace/package structure for adapters and reserve
 future package locations.
 
-- [ ] T001 Create `packages/vue`, `packages/adapter-contracts`, `packages/adapter-testing`, `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid` directories per `specs/002-framework-adapters/plan.md`
-- [ ] T002 Configure `packages/vue/package.json`, `packages/vue/tsconfig.json`, and `packages/vue/README.md` for `@atlaskit/vue` with `@atlaskit/core` workspace dependency, Vue peer dependency, TailwindCSS peer/dev dependency notes, build scripts, test scripts, and exports
-- [ ] T003 [P] Configure `packages/adapter-contracts/package.json`, `packages/adapter-contracts/tsconfig.json`, and `packages/adapter-contracts/README.md` for shared runtime contracts in `packages/adapter-contracts/`
-- [ ] T004 [P] Configure `packages/adapter-testing/package.json`, `packages/adapter-testing/tsconfig.json`, and `packages/adapter-testing/README.md` for shared adapter behavior tests in `packages/adapter-testing/`
-- [ ] T005 [P] Add placeholder `package.json`, `tsconfig.json`, `README.md`, and `src/index.ts` files for `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid`
-- [ ] T006 Configure `packages/vue/src/index.ts`, `packages/adapter-contracts/src/index.ts`, and `packages/adapter-testing/src/index.ts` as initial public entrypoints
-- [ ] T007 [P] Add Vue package test setup files in `packages/vue/vitest.config.ts` and `packages/vue/tests/setup.ts`
-- [ ] T008 [P] Add shared adapter testing harness setup in `packages/adapter-testing/vitest.config.ts` and `packages/adapter-testing/tests/setup.ts`
+- [X] T001 Create `packages/vue`, `packages/adapter-contracts`, `packages/adapter-testing`, `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid` directories per `specs/002-framework-adapters/plan.md`
+- [X] T002 Configure `packages/vue/package.json`, `packages/vue/tsconfig.json`, and `packages/vue/README.md` for `@atlaskit/vue` with `@atlaskit/core` workspace dependency, Vue peer dependency, TailwindCSS peer/dev dependency notes, build scripts, test scripts, and exports
+- [X] T003 [P] Configure `packages/adapter-contracts/package.json`, `packages/adapter-contracts/tsconfig.json`, and `packages/adapter-contracts/README.md` for shared runtime contracts in `packages/adapter-contracts/`
+- [X] T004 [P] Configure `packages/adapter-testing/package.json`, `packages/adapter-testing/tsconfig.json`, and `packages/adapter-testing/README.md` for shared adapter behavior tests in `packages/adapter-testing/`
+- [X] T005 [P] Add placeholder `package.json`, `tsconfig.json`, `README.md`, and `src/index.ts` files for `packages/dom`, `packages/react`, `packages/angular`, `packages/svelte`, and `packages/solid`
+- [X] T006 Configure `packages/vue/src/index.ts`, `packages/adapter-contracts/src/index.ts`, and `packages/adapter-testing/src/index.ts` as initial public entrypoints
+- [X] T007 [P] Add Vue package test setup files in `packages/vue/vitest.config.ts` and `packages/vue/tests/setup.ts`
+- [X] T008 [P] Add shared adapter testing harness setup in `packages/adapter-testing/vitest.config.ts` and `packages/adapter-testing/tests/setup.ts`
 
 ---
 
@@ -55,14 +55,14 @@ all Vue adapter behavior.
 
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
-- [ ] T009 Define resource reference types and normalization helpers in `packages/adapter-contracts/src/resources/resourceReference.ts` and `packages/adapter-contracts/src/resources/resolveResourceReference.ts`
-- [ ] T010 [P] Define shared component prop types, slot prop types, and execution-context types in `packages/adapter-contracts/src/state/componentProps.ts` and `packages/adapter-contracts/src/state/slotProps.ts`
-- [ ] T011 [P] Define shared class-map and theme-token schemas in `packages/adapter-contracts/src/theme/classMap.ts` and `packages/adapter-contracts/src/theme/themeTokens.ts`
-- [ ] T012 [P] Define shared table/form/show/action state contracts in `packages/adapter-contracts/src/state/tableState.ts`, `packages/adapter-contracts/src/state/formState.ts`, `packages/adapter-contracts/src/state/showState.ts`, and `packages/adapter-contracts/src/state/actionState.ts`
-- [ ] T013 [P] Define shared authorization rendering helpers for hidden versus disabled states in `packages/adapter-contracts/src/authorization/renderAuthorization.ts`
-- [ ] T014 Implement default Tailwind class maps, theme-token merging, and class-map override helpers in `packages/vue/src/theme/defaultClasses.ts`, `packages/vue/src/theme/themeTokens.ts`, `packages/vue/src/theme/createClassMap.ts`, and `packages/vue/src/composables/useAtlasTheme.ts`
-- [ ] T015 [P] Add shared adapter behavior fixtures and scenario helpers in `packages/adapter-testing/src/fixtures/adapterFixtures.ts` and `packages/adapter-testing/src/scenarios/behaviorScenarios.ts`
-- [ ] T016 [P] Add foundational tests for resource normalization, state contracts, authorization rendering, and class merging in `packages/adapter-contracts/tests/contracts.test.ts`, `packages/vue/tests/theme/useAtlasTheme.test.ts`, and `packages/adapter-testing/tests/behavior-fixtures.test.ts`
+- [X] T009 Define resource reference types and normalization helpers in `packages/adapter-contracts/src/resources/resourceReference.ts` and `packages/adapter-contracts/src/resources/resolveResourceReference.ts`
+- [X] T010 [P] Define shared component prop types, slot prop types, and execution-context types in `packages/adapter-contracts/src/state/componentProps.ts` and `packages/adapter-contracts/src/state/slotProps.ts`
+- [X] T011 [P] Define shared class-map and theme-token schemas in `packages/adapter-contracts/src/theme/classMap.ts` and `packages/adapter-contracts/src/theme/themeTokens.ts`
+- [X] T012 [P] Define shared table/form/show/action state contracts in `packages/adapter-contracts/src/state/tableState.ts`, `packages/adapter-contracts/src/state/formState.ts`, `packages/adapter-contracts/src/state/showState.ts`, and `packages/adapter-contracts/src/state/actionState.ts`
+- [X] T013 [P] Define shared authorization rendering helpers for hidden versus disabled states in `packages/adapter-contracts/src/authorization/renderAuthorization.ts`
+- [X] T014 Implement default Tailwind class maps, theme-token merging, and class-map override helpers in `packages/vue/src/theme/defaultClasses.ts`, `packages/vue/src/theme/themeTokens.ts`, `packages/vue/src/theme/createClassMap.ts`, and `packages/vue/src/composables/useAtlasTheme.ts`
+- [X] T015 [P] Add shared adapter behavior fixtures and scenario helpers in `packages/adapter-testing/src/fixtures/adapterFixtures.ts` and `packages/adapter-testing/src/scenarios/behaviorScenarios.ts`
+- [X] T016 [P] Add foundational tests for resource normalization, state contracts, authorization rendering, and class merging in `packages/adapter-contracts/tests/contracts.test.ts`, `packages/vue/tests/theme/useAtlasTheme.test.ts`, and `packages/adapter-testing/tests/behavior-fixtures.test.ts`
 
 **Checkpoint**: Shared adapter contract and theme/state foundation ready - user story implementation can now begin in parallel
 
